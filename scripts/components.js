@@ -7,11 +7,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const pathPrefix = window.location.pathname.includes('/menu/') ? '../' : './';
 
     // Load navigation with the correct path
-    const navPlaceholder = document.getElementById('nav-placeholder');
-    fetch(`${repoName}${pathPrefix}nav.html`)
+    // Load navigation
+    fetch(`${repoName}/nav.html`)
         .then(response => response.text())
         .then(data => {
-            navPlaceholder.innerHTML = data;
+            document.getElementById('nav-placeholder').innerHTML = data;
             initializeHamburgerMenu();
             initializeMobileMenu();
             
@@ -27,11 +27,11 @@ document.addEventListener('DOMContentLoaded', function() {
         .catch(error => console.log('Nav loading error:', error));
 
     // Load footer with the correct path
-    fetch(`${repoName}${pathPrefix}footer.html`)
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('footer-placeholder').innerHTML = data;
-        });
+    fetch(`${repoName}/footer.html`)
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+    });
 });
 
 function updateCartCount() {
