@@ -1,3 +1,7 @@
+// Dynamic path detection
+const isGitHubPages = window.location.hostname.includes('github.io');
+const repoName = isGitHubPages ? '/Pinecrest_Bakery_Site_Rework_Version_2-HTML-CSS-JS' : '';
+
 document.addEventListener('DOMContentLoaded', function() {
     // Get the current path depth
     const pathPrefix = window.location.pathname.includes('/menu/') ? '../' : './';
