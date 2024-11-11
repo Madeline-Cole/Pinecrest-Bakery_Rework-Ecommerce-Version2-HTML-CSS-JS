@@ -1,4 +1,4 @@
-// Dynamic path detection
+// Dynamic path detection (only need this once at the top)
 const isGitHubPages = window.location.hostname.includes('github.io');
 const repoName = isGitHubPages ? '/Pinecrest_Bakery_Site_Rework_Version_2-HTML-CSS-JS' : '';
 
@@ -6,16 +6,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get the current path depth
     const pathPrefix = window.location.pathname.includes('/menu/') ? '../' : './';
 
-    // Load navigation
+    // Load navigation with the correct path
     const navPlaceholder = document.getElementById('nav-placeholder');
-    fetch(`${pathPrefix}nav.html`)
+    fetch(`${repoName}${pathPrefix}nav.html`)
         .then(response => response.text())
         .then(data => {
             navPlaceholder.innerHTML = data;
             initializeHamburgerMenu();
             initializeMobileMenu();
             
-            // Check if we're on the cart page
             const isCartPage = window.location.pathname.includes('cart.html');
             const cartCount = document.querySelector('.cart-count');
             
@@ -27,8 +26,8 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => console.log('Nav loading error:', error));
 
-    // Load footer
-    fetch(`${pathPrefix}footer.html`)
+    // Load footer with the correct path
+    fetch(`${repoName}${pathPrefix}footer.html`)
         .then(response => response.text())
         .then(data => {
             document.getElementById('footer-placeholder').innerHTML = data;
