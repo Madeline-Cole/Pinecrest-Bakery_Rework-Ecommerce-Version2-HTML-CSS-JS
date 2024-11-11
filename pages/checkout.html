@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Pinecrest Bakery</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/checkout.css">
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+
+    <main class="checkout-page">
+        <div class="checkout-container">
+            <div class="checkout-progress">
+                <div class="progress-step active">
+                    <div class="step-number">1</div>
+                    <span>Order Review</span>
+                </div>
+                <div class="progress-step">
+                    <div class="step-number">2</div>
+                    <span>Pickup Schedule</span>
+                </div>
+                <div class="progress-step">
+                    <div class="step-number">3</div>
+                    <span>Payment</span>
+                </div>
+            </div>
+
+            <!-- Step 1: Order Review -->
+            <div id="step1" class="checkout-step active">
+                <h2>Review Your Order</h2>
+                <div class="order-categories">
+                    <div class="regular-items">
+                        <h3>Regular Items</h3>
+                        <div class="order-summary" id="regularItems"></div>
+                    </div>
+                    <div class="special-items">
+                        <h3>Catering & Seasonal Items</h3>
+                        <div class="order-summary" id="specialItems"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2: Pickup Schedule -->
+            <div id="step2" class="checkout-step">
+                <h2>Schedule Your Pickup</h2>
+                
+                <div class="pickup-options">
+                    <div class="combine-pickup">
+                        <label>
+                            <input type="checkbox" id="combinePickup">
+                            Combine all items for one pickup (48-hour minimum wait)
+                        </label>
+                    </div>
+
+                    <div id="regularPickup" class="pickup-section">
+                        <h3>Regular Items Pickup</h3>
+                        <div class="form-group">
+                            <label for="regularDate">Pickup Date</label>
+                            <input type="date" id="regularDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="regularTime">Pickup Time</label>
+                            <select id="regularTime" required></select>
+                        </div>
+                        <p class="time-notice">Minimum 30 minutes advance notice required</p>
+                    </div>
+
+                    <div id="specialPickup" class="pickup-section">
+                        <h3>Catering & Seasonal Items Pickup</h3>
+                        <div class="form-group">
+                            <label for="specialDate">Pickup Date</label>
+                            <input type="date" id="specialDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="specialTime">Pickup Time</label>
+                            <select id="specialTime" required></select>
+                        </div>
+                        <p class="time-notice">Minimum 48 hours advance notice required</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Payment -->
+            <div id="step3" class="checkout-step">
+                <h2>Payment Information</h2>
+                </div>
+                <form id="payment-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="cardName">Name on Card</label>
+                            <input type="text" id="cardName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cardNumber">Card Number</label>
+                            <input type="text" id="cardNumber" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expiry">Expiry Date</label>
+                            <input type="text" id="expiry" placeholder="MM/YY" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" required>
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <button type="submit" class="complete-order">Complete Order</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+</body>
+<script type="module" src="/assets/js/checkout.js"></script>
+<script type="module" src="/assets/js/components.js"></script>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Menu - Pinecrest Bakery</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/menu.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <div id="nav-placeholder"></div>
+
+    <main class="menu-page">
+        <div class="menu-header">
+            <h1>Cafe Menu</h1>
+            <div class="filter-container">
+                <div class="search-bar">
+                    <input type="text" id="searchMenu" placeholder="Search menu items...">
+                </div>
+                
+                <div class="filter-groups">
+                    <div class="filter-group">
+                        <label>Category</label>
+                        <select id="categoryFilter">
+                            <option value="all">All Cafe Products</option>
+                            <option value="breakfast">Breakfast</option>
+                            <option value="drinks">Drinks</option>
+                            <option value="sandwiches">Sandwiches</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label>Subcategory</label>
+                        <select id="subCategoryFilter">
+                            <option value="all">All Types</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-content">
+            <div class="products-grid" id="menuGrid">
+                <!-- Products will be dynamically populated -->
+            </div>
+        </div>
+
+        <!-- Cart Sidebar -->
+        <div class="cart-sidebar" id="cartSidebar">
+            <div class="cart-header">
+                <h3>Your Cart</h3>
+                <button class="close-cart">×</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cartTotal">$0.00</span>
+                </div>
+                <button class="checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+</body>
+
+<script type="module" src="/assets/js/cafe.js"></script>
+<script type="module" src="/assets/js/components.js"></script>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catering Menu - Pinecrest Bakery</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/menu.css">
+    <link rel="stylesheet" href="/assets/css/catering.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <div id="nav-placeholder"></div>
+
+    <main class="menu-page">
+        <div class="menu-header">
+            <h1>Catering Menu</h1>
+            <div class="filter-container">
+                <div class="search-bar">
+                    <input type="text" id="searchMenu" placeholder="Search catering items...">
+                </div>
+                
+                <div class="filter-groups">
+                    <div class="filter-group">
+                        <label>Category</label>
+                        <select id="categoryFilter">
+                            <option value="all">All Catering Items</option>
+                            <option value="partyPackages">Party Packages</option>
+                            <option value="cakes">Cakes</option>
+                            <option value="meals">Meals</option>
+                            <option value="sides">Sides</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label>Type</label>
+                        <select id="subCategoryFilter">
+                            <option value="all">All Types</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="menu-content">
+            <div class="products-grid" id="menuGrid">
+                <!-- Products will be dynamically populated -->
+            </div>
+        </div>
+    </main>    
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+</body>
+<script type="module" src="/assets/js/components.js"></script>
+<script type="module" src="/assets/js/catering.js"></script>
+</html>
