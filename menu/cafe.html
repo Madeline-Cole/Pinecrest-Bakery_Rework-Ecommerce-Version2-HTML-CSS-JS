@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bakery Menu - Pinecrest Bakery</title>
+    <title>Cafe Menu - Pinecrest Bakery</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../menu.css">
 </head>
@@ -13,7 +13,7 @@
 
     <main class="menu-page">
         <div class="menu-header">
-            <h1>Bakery Menu</h1>
+            <h1>Cafe Menu</h1>
             <div class="filter-container">
                 <div class="search-bar">
                     <input type="text" id="searchMenu" placeholder="Search menu items...">
@@ -23,11 +23,10 @@
                     <div class="filter-group">
                         <label>Category</label>
                         <select id="categoryFilter">
-                            <option value="all">All Bakery Products</option>
-                            <option value="latin">Latin American Delights</option>
-                            <option value="desserts">Desserts</option>
-                            <option value="breads">Breads</option>
-                            <option value="dry-case">Dry Case</option>
+                            <option value="all">All Cafe Products</option>
+                            <option value="breakfast">Breakfast</option>
+                            <option value="drinks">Drinks</option>
+                            <option value="sandwiches">Sandwiches</option>
                         </select>
                     </div>
                     
@@ -35,7 +34,6 @@
                         <label>Subcategory</label>
                         <select id="subCategoryFilter">
                             <option value="all">All Types</option>
-                            <!-- Dynamically populated based on category -->
                         </select>
                     </div>
                 </div>
@@ -55,7 +53,6 @@
                 <button class="close-cart">×</button>
             </div>
             <div class="cart-items" id="cartItems">
-                <!-- Cart items will be populated here -->
             </div>
             <div class="cart-footer">
                 <div class="cart-total">
@@ -67,12 +64,10 @@
         </div>
     </main>
 
-    <!-- Footer -->
     <footer class="main-footer">
-        <!-- Your existing footer structure -->
     </footer>
 </body>
 
-<script type="module" src="../menu.js"></script>
+<script type="module" src="../cafe.js"></script>
 <script src="../components.js"></script>
 </html>

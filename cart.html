@@ -4,31 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Cart - Pinecrest Bakery</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../menu.css">
+    <link rel="stylesheet" href="../cart.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <!-- Your existing nav structure -->
-    </nav>
+    <div id="nav-placeholder"></div>
 
     <main class="cart-page">
-        <h1>Your Cart</h1>
-        <div class="cart-container">
-            <div class="cart-items">
-                <!-- Cart items will be dynamically populated -->
+        <div class="cart-header">
+            <h1>Your Cart</h1>
+            <div class="cart-total-badge">
+                <span class="cart-count">0</span> Items
             </div>
-            <div class="cart-summary">
-                <h2>Order Summary</h2>
-                <!-- Order summary details -->
-                <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
+
+        <div class="cart-container">
+            <div class="cart-items-section">
+                <!-- Bakery Section -->
+                <div class="menu-section" id="bakery-items">
+                    <h2>Bakery Items</h2>
+                    <div class="cart-items"></div>
+                </div>
+
+                <!-- Cafe Section -->
+                <div class="menu-section" id="cafe-items">
+                    <h2>Cafe Items</h2>
+                    <div class="cart-items"></div>
+                </div>
+
+                <!-- Seasonal Section -->
+                <div class="menu-section" id="seasonal-items">
+                    <h2>Seasonal Items</h2>
+                    <div class="cart-items"></div>
+                </div>
+
+                <!-- Catering Section -->
+                <div class="menu-section" id="catering-items">
+                    <h2>Catering Items</h2>
+                    <div class="cart-items"></div>
+                </div>
+            </div>
+
+            <div class="cart-summary-section">
+                <div class="cart-summary">
+                    <h2>Order Summary</h2>
+                    <div class="summary-details">
+                        <div class="summary-section">
+                            <h3>Items by Category</h3>
+                            <div class="category-totals">
+                                <!-- Dynamically populated -->
+                            </div>
+                        </div>
+                        <div class="summary-totals">
+                            <div class="summary-line subtotal">
+                                <span>Subtotal</span>
+                                <span class="amount">$0.00</span>
+                            </div>
+                            <div class="summary-line tax">
+                                <span>Tax (7%)</span>
+                                <span class="amount">$0.00</span>
+                            </div>
+                            <div class="summary-line total">
+                                <span>Total</span>
+                                <span class="amount">$0.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="checkout-btn">Proceed to Checkout</button>
+                </div>
             </div>
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="main-footer">
-        <!-- Your existing footer structure -->
-    </footer>
+    <div id="footer-placeholder"></div>
 </body>
+<script src="../cart.js"></script>
+<script src="../components.js"></script>
 </html>
