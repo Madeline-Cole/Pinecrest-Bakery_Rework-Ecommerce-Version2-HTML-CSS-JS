@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pinecrest Bakery - Cuban Bakery</title>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/popular-products.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div id="nav-placeholder"></div>
 
     <main>
+        <!-- HERO SECTION -->
         <section class="hero">
             <div class="hero-content">
                 <p class="welcome-text">Welcome to Pinecrest Bakery</p>
@@ -24,105 +26,89 @@
             </div>
         </section>
 
-            <!-- Add this right after the hero section -->
-<section class="product-grid">
-    <div class="grid-container">
-        <div class="grid-item holiday-item">
-            <div class="holiday-content">
-                <h2>Holiday Products</h2>
-                <p>Please order 2 days in advance</p>
-                <a href="/menu/holiday" class="btn">Order Pickup</a>
-            </div>
-        </div>
-        <div class="grid-item">
-            <img src="assets/images/holiday1.png" alt="Fresh Cuban Pastries">
-        </div>
-        <div class="grid-item">
-            <img src="assets/images/holiday2.png" alt="Artisan Cuban Bread">
-        </div>
-        <div class="grid-item">
-            <img src="images/holiday3.png" alt="Special Occasion Cakes">
-        </div>
-        <div class="grid-item">
-            <img src="images/holiday4.png" alt="Traditional Cuban Cookies">
-        </div>
-        <div class="grid-item">
-            <img src="images/holiday5.png" alt="Savory Empanadas">
-        </div>
-        <div class="grid-item">
-            <img src="images/holiday6.png" alt="Savory Empanadas">
-        </div>
-        <div class="grid-item">
-            <img src="images/holiday7.png" alt="Savory Empanadas">
-        </div>
-        <div class="grid-item">
-            <img src="images/holiday8.png" alt="Savory Empanadas">
-        </div>
-    </div>
-</section>
+            <!-- SEASONAL PRODUCTS SECTION -->
+            <section class="product-grid">
+                <div class="grid-container">
+                    <!-- Dynamic content will be inserted here -->
+                </div>
+            </section>   
 
-            <!-- Add this after the product grid section -->
-<section class="popular-products">
-    <h2 class="section-title">Popular Products</h2>
-    
-    <div class="products-container">
-        <div class="products-wrapper">
-            <div class="product-card">
-                <img src="images/bakery4.png" alt="Cuban Bread">
-                <h3>Chocolate Fudge Cake</h3>
-                <p class="price">$36.40</p>
-                <p class="servings">Serves 12-16</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            
-            <div class="product-card">
-                <img src="images/bakery5.png" alt="Fruit Tart Image">
-                <h3>Fresh Fruit Tart</h3>
-                <p class="price">$36.40</p>
-                <p class="servings">Serves 12-16</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            
-            <div class="product-card">
-                <img src="images/catering1.png" alt="Family Breakfast Platter Image">
-                <h3>Family Breakfast Platter</h3>
-                <p class="price">$31.19</p>
-                <p class="servings">Serves 4</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            
-            <div class="product-card">
-                <img src="images/seasonal3.png" alt="Thanksgiving Pies Image">
-                <h3>Thanksgiving Pies</h3>
-                <p class="price">$12.47</p>
-                <p class="servings">Serves 8-12</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-        </div>
-    </div>
-    
-    <div class="scroll-dots"></div>
-</section>
+            <!-- POPULAR PRODUCTS SECTION -->
+            <section class="popular-products">
+                <h2 class="section-title">Most Popular Items</h2>
+                <div class="popular-products__container">
+                  <div class="popular-products__grid">
+                    <!-- Dynamic products will be inserted here -->
+                  </div>
+                  <div class="popular-products__controls">
+                    <button class="scroll-btn prev" aria-label="Previous products">
+                      <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="scroll-btn next" aria-label="Next products">
+                      <i class="fas fa-chevron-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </section>
 
         <!-- Testimonials Section -->
-<section class="testimonials">
-    <h2 class="section-title">What Our Customers Say</h2>
-    <div class="testimonials-carousel">
-        <div class="testimonial-card">
-            <div class="customer-photo">
-                <img src="customer1.jpg" alt="Maria Rodriguez">
+        <section class="testimonials">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonials-container">
+                <div class="testimonials-track">
+                    <div class="testimonial-card">
+                        <div class="customer-photo">
+                            <img src="assets/images/customers/maria.jpg" alt="Maria Rodriguez">
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="stars">★★★★★</div>
+                            <p class="testimonial-text">"The best Cuban bread in Miami! Reminds me of my grandmother's recipes."</p>
+                            <div class="customer-info">
+                                <p class="customer-name">Maria Rodriguez</p>
+                                <p class="customer-title">Regular Customer</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="customer-photo">
+                            <img src="assets/images/customers/juan.jpg" alt="Juan Perez">
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="stars">★★★★★</div>
+                            <p class="testimonial-text">"Their Cuban coffee and pastelitos are absolutely authentic. A taste of Havana in Miami!"</p>
+                            <div class="customer-info">
+                                <p class="customer-name">Juan Perez</p>
+                                <p class="customer-title">Food Blogger</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="customer-photo">
+                            <img src="assets/images/customers/sofia.jpg" alt="Sofia Martinez">
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="stars">★★★★★</div>
+                            <p class="testimonial-text">"The service is exceptional and the guava pastries are heavenly. My weekend isn't complete without a visit!"</p>
+                            <div class="customer-info">
+                                <p class="customer-name">Sofia Martinez</p>
+                                <p class="customer-title">Local Resident</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonials-controls">
+                    <button class="control-btn prev" aria-label="Previous testimonial">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="control-btn next" aria-label="Next testimonial">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
             </div>
-            <div class="stars">★★★★★</div>
-            <p class="testimonial-text">"The best Cuban bread in Miami! Reminds me of my grandmother's recipes."</p>
-            <p class="customer-name">Maria Rodriguez</p>
-        </div>
-        <!-- More testimonial cards -->
-    </div>
-    <div class="carousel-controls">
-        <button class="prev">←</button>
-        <button class="next">→</button>
-    </div>
-</section>
+        </section>               
 
 <!-- Why Choose Us Section -->
 <section class="why-choose-us">
@@ -208,5 +194,7 @@
 
     <script type="module" src="assets/js/components.js"></script>
     <script type="module" src="assets/js/script.js"></script>
+    <script type="module" src="assets/js/popular-products.js"></script>
+    <script type="module" src="assets/js/testimonials.js"></script>
 </body>
 </html>

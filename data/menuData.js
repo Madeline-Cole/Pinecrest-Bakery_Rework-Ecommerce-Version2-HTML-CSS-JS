@@ -7,7 +7,7 @@ export const menuData = {
             servings: "1 piece",
             category: "latin",
             subCategory: "pastelitos",
-            image: "../images/products/guava-pastelito.jpg",
+            image: "/assets/images/pastelito.png",
             description: "Sweet guava filling in flaky pastry"
         },
         {
@@ -17,7 +17,7 @@ export const menuData = {
             servings: "1 piece",
             category: "latin",
             subCategory: "pastelitos",
-            image: "../images/products/cheese-pastelito.jpg",
+            image: "/assets/images/pastelito.png",
             description: "Creamy cheese filled pastry"
         },
         {
@@ -27,7 +27,7 @@ export const menuData = {
             servings: "1 piece",
             category: "latin",
             subCategory: "pastelitos",
-            image: "../images/products/guava-cheese-pastelito.jpg",
+            image: "/assets/images/pastelito.png",
             description: "Perfect blend of sweet guava and cream cheese"
         },
         {
@@ -37,7 +37,7 @@ export const menuData = {
             servings: "1 piece",
             category: "latin",
             subCategory: "pastelitos",
-            image: "../images/products/coconut-pastelito.jpg",
+            image: "/assets/images/pastelito.png",
             description: "Sweet coconut filled pastry"
         },
         {
@@ -47,7 +47,7 @@ export const menuData = {
             servings: "1 piece",
             category: "latin",
             subCategory: "pastelitos",
-            image: "../images/products/coconut-cheese-pastelito.jpg",
+            image: "/assets/images/pastelito.png",
             description: "Tropical coconut with cream cheese"
         },
         {
@@ -57,7 +57,7 @@ export const menuData = {
             servings: "1 piece",
             category: "latin",
             subCategory: "pastelitos",
-            image: "../images/products/pineapple-pastelito.jpg",
+            image: "/assets/images/pastelito.png",
             description: "Sweet pineapple filled pastry"
         },
         {
@@ -67,7 +67,7 @@ export const menuData = {
             servings: "1 piece",
             category: "latin",
             subCategory: "pastelitos",
-            image: "../images/products/beef-pastelito.jpg",
+            image: "/assets/images/pastelito.png",
             description: "Savory seasoned ground beef filling"
         },
         {
@@ -77,7 +77,7 @@ export const menuData = {
             servings: "1 piece",
             category: "latin",
             subCategory: "pastelitos",
-            image: "../images/products/chorizo-pastelito.jpg",
+            image: "/assets/images/pastelito.png",
             description: "Spicy chorizo sausage filled"
         },
         {
@@ -87,7 +87,7 @@ export const menuData = {
             servings: "1 piece",
             category: "latin",
             subCategory: "pastelitos",
-            image: "../images/products/chicken-pastelito.jpg",
+            image: "/assets/images/pastelito.png",
             description: "Seasoned shredded chicken filling"
         },
         {
@@ -97,7 +97,7 @@ export const menuData = {
             servings: "1 piece",
             category: "latin",
             subCategory: "pastelitos",
-            image: "../images/products/ham-pastelito.jpg",
+            image: "/assets/images/pastelito.png",
             description: "Classic ham filled pastry"
         },
         {
@@ -107,7 +107,7 @@ export const menuData = {
             servings: "1 piece",
             category: "latin",
             subCategory: "pastelitos",
-            image: "../images/products/ham-cheese-pastelito.jpg",
+            image: "/assets/images/pastelito.png",
             description: "Ham and cheese combination"
         },
         {
@@ -117,7 +117,7 @@ export const menuData = {
             servings: "1 piece",
             category: "latin",
             subCategory: "pastelitos",
-            image: "../images/products/pizza-pastelito.jpg",
+            image: "/assets/images/pastelito.png",
             description: "Pizza sauce, cheese, and pepperoni filled"
         },
         {
@@ -127,7 +127,7 @@ export const menuData = {
             servings: "1 piece",
             category: "latin",
             subCategory: "pastelitos",
-            image: "../images/products/preparado-pastelito.jpg",
+            image: "/assets/images/pastelito.png",
             description: "Special combination of ham, cheese, and pork"
         },
         {
@@ -137,7 +137,7 @@ export const menuData = {
             servings: "1 piece",
             category: "latin",
             subCategory: "pastelitos",
-            image: "../images/products/nutella-pastelito.jpg",
+            image: "/assets/images/pastelito.png",
             description: "Rich chocolate hazelnut spread filled"
         },
         {
@@ -147,7 +147,7 @@ export const menuData = {
             servings: "1 piece",
             category: "latin",
             subCategory: "pastelitos",
-            image: "../images/products/pistachio-pastelito.jpg",
+            image: "/assets/images/pastelito.png",
             description: "Sweet pistachio cream filled"
         },
         {
@@ -157,7 +157,7 @@ export const menuData = {
             servings: "1 piece",
             category: "latin",
             subCategory: "empanadas",
-            image: "../images/products/beef-empanada.jpg",
+            image: "/assets/images/empanada.png",
             description: "Classic homemade empanada with seasoned ground beef",
             options: ["Baked", "Fried"]
         },
@@ -168,7 +168,7 @@ export const menuData = {
             servings: "1 piece",
             category: "latin",
             subCategory: "empanadas",
-            image: "../images/products/chicken-empanada.jpg",
+            image: "/assets/images/empanada.png",
             description: "Classic homemade empanada with seasoned shredded chicken",
             options: ["Baked", "Fried"]
         },
@@ -179,7 +179,7 @@ export const menuData = {
             servings: "1 piece",
             category: "latin",
             subCategory: "empanadas",
-            image: "../images/products/ham-cheese-empanada.jpg",
+            image: "/assets/images/empanada.png",
             description: "Classic homemade empanada filled with ham and melted cheese",
             options: ["Baked", "Fried"]
         },
@@ -190,7 +190,7 @@ export const menuData = {
             servings: "1 piece",
             category: "latin",
             subCategory: "empanadas",
-            image: "../images/products/ham-cheese-chorizo-empanada.jpg",
+            image: "/assets/images/empanada.png",
             description: "Classic homemade empanada with ham, cheese, and spicy chorizo",
             options: ["Baked", "Fried"]
         },
@@ -201,7 +201,7 @@ export const menuData = {
             servings: "1 piece",
             category: "latin",
             subCategory: "empanadas",
-            image: "../images/products/spinach-cheese-empanada.jpg",
+            image: "/assets/images/empanada.png",
             description: "Classic homemade empanada with fresh spinach and melted cheese",
             options: ["Baked", "Fried"]
         },
@@ -212,7 +212,7 @@ export const menuData = {
             servings: "1 piece",
             category: "latin",
             subCategory: "colombian-empanadas",
-            image: "../images/products/colombian-cheese-empanada.jpg",
+            image: "/assets/images/empanada.png",
             description: "Traditional yellow corn dough empanada filled with melted cheese",
             style: "Colombian"
         },
@@ -223,7 +223,7 @@ export const menuData = {
             servings: "1 piece",
             category: "latin",
             subCategory: "colombian-empanadas",
-            image: "../images/products/colombian-meat-empanada.jpg",
+            image: "/assets/images/empanada.png",
             description: "Traditional yellow corn dough empanada with seasoned ground meat",
             style: "Colombian"
         },
@@ -234,7 +234,7 @@ export const menuData = {
             servings: "1 piece",
             category: "latin",
             subCategory: "colombian-empanadas",
-            image: "../images/products/colombian-chicken-empanada.jpg",
+            image: "/assets/images/empanada.png",
             description: "Traditional yellow corn dough empanada with seasoned shredded chicken",
             style: "Colombian"
         },
@@ -245,7 +245,7 @@ export const menuData = {
             servings: "1 piece",
             category: "latin",
             subCategory: "camaguey-empanadas",
-            image: "../images/products/camaguey-beef-empanada.jpg",
+            image: "/assets/images/camaguey-emp.png",
             description: "Elephant ear style fried empanada filled with seasoned beef",
             style: "Camagüeyana"
         },
@@ -256,7 +256,7 @@ export const menuData = {
             servings: "1 piece",
             category: "latin",
             subCategory: "camaguey-empanadas",
-            image: "../images/products/camaguey-guava-empanada.jpg",
+            image: "/assets/images/camaguey-emp.png",
             description: "Elephant ear style fried empanada with sweet guava filling",
             style: "Camagüeyana"
         },
@@ -2032,6 +2032,59 @@ seasonal: {
             includes: '25 Assorted Mini Marquesitas',
             flavors: 'May Include: Chocolate, Guava, Lemon Raspberry, Tiramisu, Red Velvet, and More',
             image: '/assets/images/holiday4.png'
+        },
+        {
+            id: 'pumpkin-cheesecake',
+            name: 'Pumpkin Cheesecake',
+            price: 27.03,
+            description: 'Rich and creamy pumpkin cheesecake',
+            soldCount: 15,
+            soldTimeframe: 17,
+            options: [
+                'Thanksgiving themed decoration',
+                'Christmas themed decoration'
+            ],
+            image: '/assets/images/holiday7.png'
+        },
+        {
+            id: 'pumpkin-flan',
+            name: 'Pumpkin Flan Cheesecake',
+            price: 36.40,
+            description: 'Unique fusion of pumpkin flan and cheesecake',
+            soldCount: 10,
+            soldTimeframe: 17,
+            options: [
+                'Thanksgiving themed decoration',
+                'Christmas themed decoration'
+            ],
+            image: '/assets/images/holiday3.png'
+        },
+        {
+            id: 'pan-dessert-combo',
+            name: 'Pan de jamón + Dessert tray',
+            price: 57.19,
+            description: 'Traditional holiday bread with assorted mini desserts',
+            soldCount: 10,
+            soldTimeframe: 17,
+            breadOptions: [
+                'Pan de Jamón',
+                'Pan de Guava'
+            ],
+            breadDescription: 'Bread filled with olives, raisins, ham, and cheese',
+            includes: '25 Assorted Mini Marquesitas',
+            flavors: 'May Include: Chocolate, Guava, Lemon Raspberry, Tiramisu, Red Velvet, and More',
+            image: '/assets/images/seasonal1.png'
+        },
+        {
+            id: 'turkey-cake',
+            name: 'Merengue Turkey Shaped Cake',
+            price: 29.12,
+            description: 'Festive turkey-shaped merengue cake',
+            soldCount: 3,
+            soldTimeframe: 17,
+            serves: '20-25 people',
+            includes: '1 Turkey shaped merengue cake',
+            image: '/assets/images/holiday6.png'
         }
     ]
 }

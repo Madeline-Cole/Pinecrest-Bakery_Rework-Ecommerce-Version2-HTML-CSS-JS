@@ -20,6 +20,18 @@ document.addEventListener('DOMContentLoaded', () => {
             message.remove();
         }, 3000);
     }
+
+    function showRemovedFromCartMessage(itemName) {
+        const message = document.createElement('div');
+        message.className = 'cart-message remove';
+        message.textContent = `${itemName} removed from cart`;
+        document.body.appendChild(message);
+    
+        setTimeout(() => {
+            message.remove();
+        }, 3000);
+    }
+    
     /*There are different categories for bakery: latin american delights (types of items in category: Pastelitos, empandas, croqutas, papa rellenas, tostatads,), breakfast, drinks(types of drinks: coffee, soda, juice), sandwiches, desserts (types of food in dessrt category: Marquesitas, Cake Slices,Cheesecake Slices,Señoritas,Eclairs, Dulce Copas, Mojados, Pudin, cake pops, cupcakes, mini mouses, pie fruit slices, tarts), breads, dry case (types of food: cookie box, muffins, fondant, masa real.)*/
 
         //core function
@@ -32,16 +44,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 const quantity = isInCart ? getProductQuantity(product.id) : 1;
                 
                 return `
-                    <div class="product-card">
-                        <img src="${product.image}" alt="${product.name}" class="product-image">
-                        <div class="product-info">
-                            <h3 class="product-title">${product.name}</h3>
-                            <p class="product-price">$${product.price.toFixed(2)}</p>
-                            <p class="product-servings">
-    ${product.category === 'sandwiches' ? product.description : 
-      product.category === 'drinks' ? `${product.servings} - ${product.description}` : 
-      product.servings}
-</p>
+                    <div class="menu-product-card">
+                        <img src="${product.image}" alt="${product.name}" class="menu-product-image">
+                        <div class="menu-product-info">
+                            <h3 class="menu-product-title">${product.name}</h3>
+                            <p class="menu-product-price">$${product.price.toFixed(2)}</p>
+                            <p class="menu-product-servings">
+                                ${product.category === 'sandwiches' ? product.description : 
+                                  product.category === 'drinks' ? `${product.servings} - ${product.description}` : 
+                                  product.servings}
+                            </p>
                             ${isInCart ? `
                                 <div class="quantity-controls">
                                     <button class="quantity-btn minus" data-id="${product.id}">-</button>
@@ -58,12 +70,12 @@ document.addEventListener('DOMContentLoaded', () => {
                                     </button>
                                 </div>
                             ` : `
-                                <button class="add-to-cart-btn" data-id="${product.id}">Add to Cart</button>
+                                <button class="menu-add-to-cart-btn" data-id="${product.id}">Add to Cart</button>
                             `}
                         </div>
                     </div>
                 `;
-            }).join('');
+            }).join('');        
         
             // Add event listeners for quantity buttons
             document.querySelectorAll('.quantity-btn').forEach(button => {
@@ -102,15 +114,19 @@ document.addEventListener('DOMContentLoaded', () => {
         /*REMOVE FROM CART*/
         function removeFromCart(productId) {
             const storedCart = JSON.parse(localStorage.getItem('cartItems')) || [];
+            const removedItem = storedCart.find(item => item.id === productId);
             const updatedCart = storedCart.filter(item => item.id !== productId);
             localStorage.setItem('cartItems', JSON.stringify(updatedCart));
             updateCartCount();
+            if (removedItem) {
+                showRemovedFromCartMessage(removedItem.name);
+            }
         }
+        
 
         //core function
         /*ADD TO CART*/
         function addToCart(productId, quantity = 1) {
-            // Look for the product across all categories
             const product = findProductInAllCategories(productId);
             
             if (product) {
@@ -123,22 +139,27 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 localStorage.setItem('cartItems', JSON.stringify(updatedCart));
                 updateCartCount();
-                renderProducts(menuData.latinAmerican);
+                showAddedToCartMessage(product.name);
+                
+                // Get current category from filter
+                const currentCategory = document.getElementById('categoryFilter').value;
+                const categoryData = currentCategory === 'all' ? menuData.latinAmerican : menuData[currentCategory];
+                renderProducts(categoryData);
             }
-        }
+        }        
 
         // Helper function to find products across all categories
-function findProductInAllCategories(productId) {
-    const categories = ['latinAmerican', 'breakfast', 'drinks', 'sandwiches'];
-    
-    for (const category of categories) {
-        if (menuData[category]) {
-            const product = menuData[category].find(p => p.id === productId);
-            if (product) return product;
+        function findProductInAllCategories(productId) {
+            const categories = ['latinAmerican', 'desserts', 'breads', 'dryCase', 'latin'];
+            
+            for (const category of categories) {
+                if (menuData[category]) {
+                    const product = menuData[category].find(p => p.id === productId);
+                    if (product) return product;
+                }
+            }
+            return null;
         }
-    }
-    return null;
-}
 
         //core function
         function getProductQuantity(productId) {
@@ -173,14 +194,15 @@ function findProductInAllCategories(productId) {
     });
 
     // Event Listeners
-    document.getElementById('menuGrid').addEventListener('click', (e) => {
-        if (e.target.classList.contains('add-to-cart-btn')) {
-            const productCard = e.target.closest('.product-card');
-            const quantityInput = productCard.querySelector('.quantity-input');
-            const quantity = quantityInput ? parseInt(quantityInput.value) : 1;
-            addToCart(e.target.dataset.id, quantity);
-        }
-    });
+    // Event Listeners
+document.getElementById('menuGrid').addEventListener('click', (e) => {
+    if (e.target.classList.contains('menu-add-to-cart-btn')) {
+        const productCard = e.target.closest('.menu-product-card');
+        const quantityInput = productCard.querySelector('.quantity-input');
+        const quantity = quantityInput ? parseInt(quantityInput.value) : 1;
+        addToCart(e.target.dataset.id, quantity);
+    }
+});
 
     document.getElementById('menuGrid').addEventListener('change', (e) => {
         if (e.target.classList.contains('quantity-input')) {

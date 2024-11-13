@@ -2,6 +2,19 @@ import { menuData } from '/data/menuData.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const seasonalGrid = document.querySelector('.seasonal-products');
+    // Get the product ID from the URL hash
+    const productId = window.location.hash.replace('#product-', '');
+    
+if (productId) {
+    // Add small delay to ensure products are rendered
+    setTimeout(() => {
+        const productElement = document.querySelector(`[data-product-id="${productId}"]`);
+        if (productElement) {
+            productElement.scrollIntoView({ behavior: 'smooth' });
+            productElement.classList.add('highlight');
+        }
+    }, 100);
+}
     
     function renderOptions(product) {
         let optionsHTML = '';
@@ -74,6 +87,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    function showRemovedFromCartMessage(itemName) {
+    const message = document.createElement('div');
+    message.className = 'cart-message remove';
+    message.textContent = `${itemName} removed from cart`;
+    document.body.appendChild(message);
+
+    setTimeout(() => {
+        message.remove();
+    }, 3000);
+}
+
+function removeFromCart(productId) {
+    const storedCart = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const removedItem = storedCart.find(item => item.id === productId);
+    const updatedCart = storedCart.filter(item => item.id !== productId);
+    localStorage.setItem('cartItems', JSON.stringify(updatedCart));
+    updateCartCount();
+    if (removedItem) {
+        showRemovedFromCartMessage(removedItem.name);
+    }
+}
+
     function addToCart(product) {
         // Validate option selection
         const selectedOption = document.querySelector(`#option-${product.id}`)?.value;
@@ -132,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderSeasonalProducts() {
         const products = menuData.seasonal.thanksgiving;
         seasonalGrid.innerHTML = products.map(product => `
-            <div class="seasonal-card">
+            <div class="seasonal-card" data-product-id="${product.id}">
                 <div class="seasonal-badge">
                     <span class="sold-count">${product.soldCount} sold</span>
                     <span class="timeframe">in last ${product.soldTimeframe} hours</span>
@@ -157,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `).join('');
         
         addEventListeners();
-    }
+    }    
     
     renderSeasonalProducts();
 });

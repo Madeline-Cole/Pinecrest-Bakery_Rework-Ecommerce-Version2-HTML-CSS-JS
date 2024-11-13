@@ -33,10 +33,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const quantity = isInCart ? getProductQuantity(product.id) : 1;
             
             return `
-    <div class="product-card">
-        <img src="${product.image}" alt="${product.name}" class="product-image">
-        <div class="product-info">
-            <h3 class="product-title">${product.name}</h3>
+    <div class="menu-product-card">
+        <img src="${product.image}" alt="${product.name}" class="menu-product-image">
+        <div class="menu-product-info">
+            <h3 class="menu-product-title">${product.name}</h3>
             
             ${product.sizes ? `
                 <select class="size-selector" data-id="${product.id}">
@@ -47,10 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     `).join('')}
                 </select>
             ` : `
-                <p class="product-price">$${product.price.toFixed(2)}</p>
+                <p class="menu-product-price">$${product.price.toFixed(2)}</p>
             `}
 
-            <p class="product-servings">
+            <p class="menu-product-servings">
                 ${product.category === 'sandwiches' ? product.description : 
                   product.category === 'drinks' ? `${product.servings} - ${product.description}` : 
                   product.servings}
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </button>
                 </div>
             ` : `
-                <button class="add-to-cart-btn" data-id="${product.id}">Add to Cart</button>
+                <button class="menu-add-to-cart-btn" data-id="${product.id}">Add to Cart</button>
             `}
         </div>
     </div>
@@ -95,9 +95,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Add to cart buttons
-        document.querySelectorAll('.add-to-cart-btn').forEach(button => {
-            button.addEventListener('click', handleAddToCart);
-        });
+    document.querySelectorAll('.menu-add-to-cart-btn').forEach(button => {
+        button.addEventListener('click', handleAddToCart);
+    });
     }
 
     // Event Handlers

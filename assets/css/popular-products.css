@@ -1,0 +1,135 @@
+.popular-products .product-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.popular-products .product-image {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    display: block;
+}
+
+.popular-products .product-info {
+    padding: 1.5rem;
+    background: white;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: static;
+    transform: none;
+}
+
+  
+  .popular-products__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .popular-products__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  }
+
+  
+  .product-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+  }
+  
+  .product-price {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .add-to-cart-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .add-to-cart-btn:hover {
+    background: darken(var(--primary-color), 10%);
+  }
+  
+  .scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    cursor: pointer;
+    z-index: 2;
+    transition: transform 0.3s ease;
+  }
+  
+  .scroll-btn:hover {
+    transform: translateY(-50%) scale(1.1);
+  }
+  
+  .scroll-btn.prev {
+    left: -20px;
+  }
+  
+  .scroll-btn.next {
+    right: -20px;
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    .popular-products__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .popular-products__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .scroll-btn {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .popular-products__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  

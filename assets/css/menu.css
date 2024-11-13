@@ -9,6 +9,18 @@
     padding: 2rem;
 }
 
+.menu-add-to-cart-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: auto;
+}
+
 .filter-container {
     max-width: 1200px;
     margin: 2rem auto;
@@ -66,6 +78,9 @@
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     overflow: hidden;
     transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .product-card:hover {
@@ -80,6 +95,9 @@
 
 .product-info {
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .product-title {
@@ -91,12 +109,14 @@
     color: var(--primary-color);
     font-weight: bold;
     font-size: 1.1rem;
+    margin-bottom: 0.5rem;
 }
 
 .product-servings {
     color: #666;
     font-size: 0.9rem;
-    margin: 0.5rem 0;
+    margin-bottom: 1rem;
+    flex-grow: 1;
 }
 
 .add-to-cart-btn {
@@ -108,6 +128,7 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s ease;
+    margin-top: auto;
 }
 
 .add-to-cart-btn:hover {
@@ -236,3 +257,107 @@
         opacity: 1;
     }
 }
+
+/* Specific styles for bakery/cafe menu products */
+.bakery-menu .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.bakery-menu .product-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.bakery-menu .product-info {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.bakery-menu .product-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.bakery-menu .product-price {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.bakery-menu .product-servings {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.bakery-menu .add-to-cart-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: auto;
+}
+
+.menu-product-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.menu-product-image {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.menu-product-card:hover {
+    transform: translateY(-5px);
+}
+
+.menu-product-info {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.menu-product-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.menu-product-price {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.menu-product-servings {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+

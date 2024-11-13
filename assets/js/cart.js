@@ -236,8 +236,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.querySelector('.checkout-btn').addEventListener('click', () => {
-        window.location.href = '../checkout.html';
-    });
+        window.location.href = '/pages/checkout.html';
+    });    
 
     // Event listeners for cart containers
     cartContainers.forEach(container => {
