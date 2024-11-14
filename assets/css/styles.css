@@ -126,66 +126,124 @@ body {
 /* Hero Section Styles */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hero-bg.jpg');
+    margin-top: 80px; /* Adds space for fixed navbar */
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('bakery-hero.jpg');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: var(--white);
+    position: relative;
+    overflow: hidden;
 }
 
 .hero-content {
     max-width: 800px;
     padding: 2rem;
+    animation: fadeInUp 1s ease-out;
+    z-index: 2;
 }
 
 .welcome-text {
     color: var(--primary-color);
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .hero h1 {
-    font-size: 3.5rem;
+    font-size: 4.5rem;
     margin-bottom: 1.5rem;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 .hero-description {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+    font-size: 1.4rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.9);
 }
 
 .hero-buttons {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     justify-content: center;
 }
 
 .btn {
-    padding: 1rem 2rem;
+    padding: 1.2rem 2.5rem;
     background: var(--primary-color);
     color: var(--white);
     text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s ease;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
 }
 
 .btn:hover {
-    background: darken(var(--primary-color), 10%);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
 
-    .hero h1 {
-        font-size: 2.5rem;
+.btn:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
     }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+    
+    .hero-description {
+        font-size: 1.2rem;
+    }
+    
     .hero-buttons {
         flex-direction: column;
+        gap: 1rem;
     }
+    
+    .btn {
+        width: 100%;
+    }
+}
 
-/* Add these styles to your existing CSS */
+/* Seasonal Products Display Section */
 
 .product-grid {
     padding: 4rem 2rem;
@@ -629,6 +687,66 @@ body {
 }
 
 /* Location Finder Section */
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 0.5rem;
+    border: 1px solid #eee;
+}
+
+.search-icon {
+    color: #666;
+    padding: 0 1rem;
+}
+
+#location-input {
+    flex: 1;
+    border: none;
+    padding: 0.75rem;
+    font-size: 1rem;
+    outline: none;
+}
+
+#location-input::placeholder {
+    color: #999;
+}
+
+.search-btn {
+    background: #e63946;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.2s ease;
+}
+
+.search-btn:hover {
+    background: #d62f3d;
+}
+
+.search-btn i {
+    font-size: 0.9rem;
+}
+.search-btn:hover i {
+    animation: shake 0.5s ease-in-out;
+}
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
 .location-finder {
     padding: 4rem 2rem;
 }
@@ -647,16 +765,122 @@ body {
     max-width: 1200px;
     margin: 0 auto;
 }
-
-#map {
-    height: 500px;
-    border-radius: 15px;
+.store-map {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+.store-map iframe {
+    display: block;
+    width: 100%;
+}
+.map-info-window {
+    padding: 12px;
+    max-width: 200px;
+}
+
+.map-info-window h3 {
+    margin: 0 0 8px;
+    color: #333;
+}
+
+.map-info-window p {
+    margin: 0 0 8px;
+    color: #666;
+}
+
+.map-info-window a {
+    color: #e63946;
+    text-decoration: none;
+    font-weight: 600;
+}
 .locations-list {
     height: 500px;
     overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #e63946 #f1f1f1;
 }
+
+.location-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: 1px solid #eee;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.location-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.location-card h3 {
+    color: #333;
+    margin: 0 0 1rem;
+    font-size: 1.25rem;
+}
+
+.location-card address {
+    margin: 0 0 1rem;
+    font-style: normal;
+    color: #666;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.location-card .store-details {
+    margin: 1rem 0;
+}
+
+.location-card .store-details p {
+    margin: 0.5rem 0;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.location-card .store-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.btn-directions, .btn-order {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    flex: 1;
+    text-align: center;
+    transform: translateY(-1px);
+    transition: transform 0.2s ease;
+}
+
+.btn-directions {
+    background-color: #f8f9fa;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.btn-order {
+    background-color: #e63946;
+    color: white;
+    border: 1px solid #e63946;
+}
+
+.location-card i {
+    color: #666;
+}
+.location-card i:hover {
+    color: #333;
+}
+
 
 /* Newsletter Section */
 .newsletter {

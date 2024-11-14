@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products - Pinecrest Bakery</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/all-products.css">
+</head>
+<body>
+    <nav class="navbar">
+        <!-- Your existing navigation -->
+    </nav>
+
+    <main class="all-products-container">
+        <div class="filters">
+            <div class="search-bar">
+                <input type="text" id="searchProducts" placeholder="Search products...">
+            </div>
+            <div class="category-filters">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="bakery">Bakery</button>
+                <button class="filter-btn" data-category="cafe">Cafe</button>
+                <button class="filter-btn" data-category="seasonal">Seasonal</button>
+                <button class="filter-btn" data-category="catering">Catering</button>
+            </div>
+        </div>
+
+        <div class="products-grid" id="productsGrid">
+            <!-- Products will be dynamically loaded here -->
+        </div>
+    </main>
+</body>
+</html>

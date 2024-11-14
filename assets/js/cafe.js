@@ -1,203 +1,253 @@
 import { menuData } from '/data/menuData.js';
 
-document.addEventListener('DOMContentLoaded', () => {
-    updateCartCount();
-    function showAddedToCartMessage(itemName) {
-        const message = document.createElement('div');
-        message.className = 'cart-message';
-        message.textContent = `${itemName} added to cart`;
-        document.body.appendChild(message);
+function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const cartCountElements = document.querySelectorAll('.cart-count');
+    cartCountElements.forEach(element => {
+        element.textContent = cart.length;
+    });
+}
+
+function showAddedToCartMessage(productName) {
+    const message = document.createElement('div');
+    message.className = 'added-to-cart-message';
+    message.textContent = `${productName} added to cart!`;
+    document.body.appendChild(message);
+    setTimeout(() => message.remove(), 3000);
+}
+
+function showRemovedFromCartMessage(productName) {
+    const message = document.createElement('div');
+    message.className = 'removed-from-cart-message';
+    message.textContent = `${productName} removed from cart`;
+    document.body.appendChild(message);
+    setTimeout(() => message.remove(), 3000);
+}
+
+function findProductInAllCategories(productId) {
+    const categories = ['breakfast', 'sandwiches', 'drinks'];
     
-        setTimeout(() => {
-            message.remove();
-        }, 3000);
+    for (const category of categories) {
+        if (menuData[category]) {
+            if (category === 'drinks') {
+                for (const subcategory in menuData[category]) {
+                    const product = menuData[category][subcategory].find(p => p.id === productId);
+                    if (product) return product;
+                }
+            } else {
+                const product = menuData[category].find(p => p.id === productId);
+                if (product) return product;
+            }
+        }
+    }
+    return null;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const cafeGrid = document.querySelector('#menuGrid');
+
+    function renderOptions(product) {
+        let optionsHTML = '';
+
+         // Add hot/cold option for heatable sandwiches
+    if (product.canBeHeated) {
+        optionsHTML += `
+            <div class="option-group">
+                <label for="temp-${product.id}">Temperature:</label>
+                <select class="temp-select" id="temp-${product.id}" required>
+                    <option value="cold">Cold</option>
+                    <option value="hot" ${product.recommended === "hot" ? 'selected' : ''}>Hot</option>
+                </select>
+            </div>
+        `;
+    }
+        
+        if (product.sizes) {
+            optionsHTML += `
+                <div class="option-group">
+                    <label for="size-${product.id}">Choose size:</label>
+                    <select class="size-select" id="size-${product.id}" required>
+                        <option value="">Select size</option>
+                        ${product.sizes.map(size => `
+                            <option value="${size.size}" data-price="${size.price}">
+                                ${size.size} (${size.volume}) - $${size.price.toFixed(2)}
+                            </option>
+                        `).join('')}
+                    </select>
+                </div>
+            `;
+        }
+        
+        if (product.options) {
+            optionsHTML += `
+                <div class="option-group">
+                    <label for="option-${product.id}">Choose option:</label>
+                    <select class="option-select" id="option-${product.id}" required>
+                        <option value="">Select an option</option>
+                        ${product.options.map(option => `
+                            <option value="${option}">${option}</option>
+                        `).join('')}
+                    </select>
+                </div>
+            `;
+        }
+        
+        return optionsHTML;
     }
 
-    function renderProducts(selectedCategory = 'breakfast') {
+    function addToCart(product) {
+        const selectedSize = document.querySelector(`#size-${product.id}`)?.value;
+        const selectedTemp = document.querySelector(`#temp-${product.id}`)?.value;
+    
+        if (product.canBeHeated && !selectedTemp) {
+            alert('Please select temperature preference');
+            return;
+        }
+    
+        const uniqueId = `${product.id}-${selectedSize || ''}-${selectedTemp || ''}`;
+        const price = selectedSize ? 
+            product.sizes.find(s => s.size === selectedSize)?.price : 
+            product.price;
+    
+        const cartItem = {
+            id: uniqueId,
+            baseId: product.id,
+            name: product.name,
+            price: price,
+            image: product.image,
+            category: product.category,
+            selectedOptions: {
+                size: selectedSize,
+                temperature: selectedTemp
+            }
+        };
+    
+        const cart = JSON.parse(localStorage.getItem('cartItems')) || [];
+        cart.push(cartItem);
+        localStorage.setItem('cartItems', JSON.stringify(cart));
+        updateCartCount();
+        showAddedToCartMessage(`${selectedTemp ? selectedTemp + ' ' : ''}${cartItem.name}`);
+    }
+
+    function getOptionQuantityInCart(productId, selectedSize) {
+        const cart = JSON.parse(localStorage.getItem('cartItems')) || [];
+        const quantity = cart.filter(item => item.baseId === productId).length;
+        console.log(`Quantity for ${productId}: ${quantity}`);
+        return quantity;
+    }
+    
+    function removeAllFromCart(productId, selectedSize) {
+        const cart = JSON.parse(localStorage.getItem('cartItems')) || [];
+        const updatedCart = cart.filter(item => item.baseId !== productId);
+        localStorage.setItem('cartItems', JSON.stringify(updatedCart));
+        updateCartCount();
+        const product = findProductInAllCategories(productId);
+        showRemovedFromCartMessage(product.name);
+        renderCafeProducts(document.getElementById('categoryFilter').value);
+    }
+
+    function renderCafeProducts(category = 'all') {
         let products = [];
         
-        if (selectedCategory === 'drinks') {
-            // Flatten drinks subcategories into a single array
-            Object.values(menuData[selectedCategory]).forEach(subcategory => {
+        if (category === 'all') {
+            ['breakfast', 'sandwiches', 'drinks'].forEach(cat => {
+                if (cat === 'drinks') {
+                    Object.values(menuData[cat]).forEach(subcategory => {
+                        products = products.concat(subcategory);
+                    });
+                } else {
+                    products = products.concat(menuData[cat] || []);
+                }
+            });
+        } else if (category === 'drinks') {
+            Object.values(menuData[category]).forEach(subcategory => {
                 products = products.concat(subcategory);
             });
         } else {
-            products = menuData[selectedCategory] || [];
+            products = menuData[category] || [];
         }
-    
-        const storedCart = JSON.parse(localStorage.getItem('cartItems')) || [];
-        const grid = document.getElementById('menuGrid');
-        
-        grid.innerHTML = products.map(product => {
-            const isInCart = storedCart.some(item => item.id === product.id);
-            const quantity = isInCart ? getProductQuantity(product.id) : 1;
+
+        cafeGrid.innerHTML = products.map(product => {
+            const quantity = getOptionQuantityInCart(product.id, '');
             
             return `
-    <div class="menu-product-card">
-        <img src="${product.image}" alt="${product.name}" class="menu-product-image">
-        <div class="menu-product-info">
-            <h3 class="menu-product-title">${product.name}</h3>
-            
-            ${product.sizes ? `
-                <select class="size-selector" data-id="${product.id}">
-                    ${product.sizes.map(size => `
-                        <option value="${size.size}" data-price="${size.price}">
-                            ${size.size} (${size.volume}) - $${size.price.toFixed(2)}
-                        </option>
-                    `).join('')}
-                </select>
-            ` : `
-                <p class="menu-product-price">$${product.price.toFixed(2)}</p>
-            `}
-
-            <p class="menu-product-servings">
-                ${product.category === 'sandwiches' ? product.description : 
-                  product.category === 'drinks' ? `${product.servings} - ${product.description}` : 
-                  product.servings}
-            </p>
-
-            ${isInCart ? `
-                <div class="quantity-controls">
-                    <button class="quantity-btn minus" data-id="${product.id}">-</button>
-                    <input type="number" 
-                        class="quantity-input" 
-                        value="${quantity}" 
-                        min="0" 
-                        max="99"
-                        data-id="${product.id}"
-                        readonly>
-                    <button class="quantity-btn plus" data-id="${product.id}">+</button>
-                    <button class="remove-from-cart" data-id="${product.id}">
-                        <i class="fas fa-trash"></i> Remove
-                    </button>
+                <div class="cafe-card" data-product-id="${product.id}">
+                    <img src="${product.image}" alt="${product.name}" class="cafe-image">
+                    <div class="cafe-content">
+                        <h2 class="cafe-title">${product.name}</h2>
+                        <p class="cafe-price">$${product.price ? product.price.toFixed(2) : '0.00'}</p>
+                        <div class="cart-info" ${quantity > 0 ? '' : 'style="display: none;"'}>
+                            <p class="cart-quantity">Amount in cart: ${quantity}</p>
+                            <button class="remove-all-btn" data-id="${product.id}">
+                                Remove all from cart
+                            </button>
+                        </div>
+                        <p class="cafe-description">${product.description || product.servings}</p>
+                        <div class="options-section">
+                            ${renderOptions(product)}
+                        </div>
+                        <button class="add-to-cart-btn" data-id="${product.id}">
+                            Add to Cart
+                        </button>
+                    </div>
                 </div>
-            ` : `
-                <button class="menu-add-to-cart-btn" data-id="${product.id}">Add to Cart</button>
-            `}
-        </div>
-    </div>
-`;
+            `;
         }).join('');
-
-        // Add event listeners for buttons
-        addButtonEventListeners();
+        
+        addEventListeners();
+        updateDynamicCartInfo();
     }
-
-    function addButtonEventListeners() {
-        // Quantity buttons
-        document.querySelectorAll('.quantity-btn').forEach(button => {
-            button.addEventListener('click', handleQuantityChange);
-        });
-
-        // Remove buttons
-        document.querySelectorAll('.remove-from-cart').forEach(button => {
-            button.addEventListener('click', handleRemove);
-        });
-
-        // Add to cart buttons
-    document.querySelectorAll('.menu-add-to-cart-btn').forEach(button => {
-        button.addEventListener('click', handleAddToCart);
-    });
-    }
-
-    // Event Handlers
-    document.querySelector('.checkout-btn').addEventListener('click', () => {
-        window.location.href = '../checkout.html';
-    });
     
-    function handleQuantityChange(e) {
-        const productId = e.target.dataset.id;
-        const input = e.target.parentElement.querySelector('.quantity-input');
-        let value = parseInt(input.value);
-
-        if (e.target.classList.contains('plus')) {
-            value = Math.min(99, value + 1);
-        } else {
-            value = Math.max(0, value - 1);
-        }
-
-        if (value === 0) {
-            removeFromCart(productId);
-        } else {
-            addToCart(productId, value);
-        }
-    }
-
-    function handleRemove(e) {
-        const productId = e.target.dataset.id;
-        const currentCategory = document.getElementById('categoryFilter').value;
-        const category = currentCategory === 'all' ? 'breakfast' : currentCategory;
-        
-        removeFromCart(productId);
-        renderProducts(category); // Pass the current category
-    }
-
-    function handleAddToCart(e) {
-        const productId = e.target.dataset.id;
-        addToCart(productId, 1);
-    }
-
-    // Cart Functions
-    function addToCart(productId, quantity) {
-        const currentCategory = document.getElementById('categoryFilter').value;
-        const category = currentCategory === 'all' ? 'breakfast' : currentCategory;
-        
-        // Look for product in current category first
-        let product = menuData[category]?.find(p => p.id === productId);
-        
-        // If not found, look in all categories
-        if (!product) {
-            const categories = ['breakfast', 'drinks', 'sandwiches', 'latinAmerican'];
-            for (const cat of categories) {
-                if (menuData[cat]) {
-                    product = menuData[cat].find(p => p.id === productId);
-                    if (product) break;
+    function updateDynamicCartInfo() {
+        document.querySelectorAll('.size-select').forEach(select => {
+            select.addEventListener('change', (e) => {
+                const productId = e.target.id.replace('size-', '');
+                const selectedSize = e.target.value;
+                const quantity = getOptionQuantityInCart(productId, selectedSize);
+                const infoContainer = document.querySelector(`.dynamic-cart-info[data-product-id="${productId}"]`);
+                
+                if (infoContainer && selectedSize && quantity > 0) {
+                    infoContainer.innerHTML = `
+                        <p class="cart-quantity">Amount of ${selectedSize} in cart: ${quantity}</p>
+                        <button class="remove-all-btn" data-id="${productId}" data-size="${selectedSize}">
+                            Remove all ${selectedSize} from cart
+                        </button>
+                    `;
+                    
+                    // Add click handler for the new remove button
+                    const removeBtn = infoContainer.querySelector('.remove-all-btn');
+                    removeBtn.onclick = () => removeAllFromCart(productId, selectedSize);
+                } else {
+                    infoContainer.innerHTML = '';
                 }
-            }
-        }
+            });
+        });
+    }
     
-        if (product) {
-            const storedCart = JSON.parse(localStorage.getItem('cartItems')) || [];
-            const updatedCart = storedCart.filter(item => item.id !== productId);
+    function addEventListeners() {
+        document.querySelectorAll('.remove-all-btn').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const productId = e.target.dataset.id;
+                removeAllFromCart(productId);
+            });
+        });
 
-            for (let i = 0; i < quantity; i++) {
-                updatedCart.push(product);
-            }
-            
-            localStorage.setItem('cartItems', JSON.stringify(updatedCart));
-            updateCartCount();
-            showAddedToCartMessage(product.name);
-            renderProducts(category);
-        }
-    }
-
-    function removeFromCart(productId) {
-        const storedCart = JSON.parse(localStorage.getItem('cartItems')) || [];
-        const updatedCart = storedCart.filter(item => item.id !== productId);
-        localStorage.setItem('cartItems', JSON.stringify(updatedCart));
-        updateCartCount();
-        // Remove the renderProducts call from here since we're calling it in handleRemove
-    }
-
-    function getProductQuantity(productId) {
-        const storedCart = JSON.parse(localStorage.getItem('cartItems')) || [];
-        return storedCart.filter(item => item.id === productId).length;
-    }
-
-    function updateCartCount() {
-        const storedCart = JSON.parse(localStorage.getItem('cartItems')) || [];
-        const cartCountElements = document.querySelectorAll('.cart-count');
-        cartCountElements.forEach(element => {
-            element.textContent = storedCart.length;
+        document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const productId = e.target.dataset.id;
+                const product = findProductInAllCategories(productId);
+                if (product) {
+                    addToCart(product);
+                }
+            });
         });
     }
 
-    // Category Filter Handler
-    document.getElementById('categoryFilter').addEventListener('change', (e) => {
-        const selectedCategory = e.target.value;
-        renderProducts(selectedCategory === 'all' ? 'breakfast' : selectedCategory);
-    });
+    // Initialize with all products
+    renderCafeProducts('all');
 
-    // Initialize with breakfast items
-    renderProducts('breakfast');
+    // Category filter listener
+    document.getElementById('categoryFilter')?.addEventListener('change', (e) => {
+        renderCafeProducts(e.target.value);
+    });
 });

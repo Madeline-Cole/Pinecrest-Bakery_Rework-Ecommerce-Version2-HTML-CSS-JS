@@ -1,0 +1,123 @@
+/* Main Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Logo Styling */
+.navbar .logo img {
+    height: 50px;
+    width: auto;
+}
+
+/* Navigation Lists */
+.navbar .nav-left ul,
+.navbar .nav-right ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+}
+
+/* Navigation Links */
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #ff6b6b;
+}
+
+/* Dropdown Menu */
+.navbar .dropdown {
+    position: relative;
+}
+
+.navbar .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1;
+}
+
+.navbar .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.navbar .dropdown-content a {
+    display: block;
+    padding: 0.5rem 1rem;
+}
+
+/* Hamburger Menu */
+.navbar .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.navbar .hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    transition: all 0.3s ease;
+}
+
+/* Mobile Menu */
+.navbar .mobile-menu-content {
+    display: none;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    .navbar .nav-left,
+    .navbar .nav-right {
+        display: none;
+    }
+
+    .navbar .hamburger {
+        display: flex;
+    }
+
+    .navbar .mobile-menu-content {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        padding: 1rem;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .navbar .mobile-menu-content.active {
+        display: block;
+    }
+
+    .navbar .mobile-menu-content ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .navbar .mobile-menu-content li {
+        padding: 0.5rem 0;
+    }
+
+    .navbar .mobile-dropdown-content {
+        padding-left: 1rem;
+    }
+}

@@ -1,0 +1,148 @@
+.cafe-card {
+    position: relative;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.cafe-card:hover {
+    transform: translateY(-5px);
+}
+
+.cafe-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.cafe-content {
+    padding: 1.5rem;
+}
+
+.cafe-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.cafe-price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #dc3545;
+    margin-bottom: 1rem;
+}
+
+.cafe-description {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.options-section {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.option-group {
+    margin-bottom: 1rem;
+}
+
+.option-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.size-select,
+.option-select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.add-to-cart-btn {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background: var(--primary-dark);
+}
+
+@media (max-width: 768px) {
+    .cafe-card {
+        margin: 1rem;
+    }
+}
+
+.added-to-cart-message,
+.removed-from-cart-message {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    animation: slideIn 0.3s ease-out;
+    z-index: 1000;
+}
+
+.added-to-cart-message {
+    background-color: #28a745;
+}
+
+.removed-from-cart-message {
+    background-color: #dc3545;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.cart-quantity {
+    color: var(--primary-color);
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+.remove-all-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.remove-all-btn:hover {
+    background-color: #c82333;
+}
+
+.dynamic-cart-info {
+    margin: 10px 0;
+}
+.dynamic-cart-info p {
+    margin: 5px 0;
+}

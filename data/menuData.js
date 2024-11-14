@@ -8,8 +8,9 @@ export const menuData = {
             category: "latin",
             subCategory: "pastelitos",
             image: "/assets/images/pastelito.png",
-            description: "Sweet guava filling in flaky pastry"
-        },
+            description: "Sweet guava pastry",
+            recommended: "hot"
+        },        
         {
             id: "lat002",
             name: "Cream Cheese Pastelito",
@@ -267,7 +268,7 @@ export const menuData = {
             servings: "1 slice",
             category: "latin",
             subCategory: "gallega-empanada",
-            image: "../images/products/gallega-ham-slice.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Traditional Spanish bread empanada pie with savory ham filling",
             style: "Gallega"
         },
@@ -278,7 +279,7 @@ export const menuData = {
             servings: "1 slice",
             category: "latin",
             subCategory: "gallega-empanada",
-            image: "../images/products/gallega-chorizo-slice.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Traditional Spanish bread empanada pie with spicy chorizo filling",
             style: "Gallega"
         },
@@ -289,7 +290,7 @@ export const menuData = {
             servings: "Whole Pie",
             category: "latin",
             subCategory: "gallega-empanada",
-            image: "../images/products/gallega-ham-pie.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Complete Spanish bread empanada pie with savory ham filling",
             style: "Gallega"
         },
@@ -300,7 +301,7 @@ export const menuData = {
             servings: "Whole Pie",
             category: "latin",
             subCategory: "gallega-empanada",
-            image: "../images/products/gallega-chorizo-pie.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Complete Spanish bread empanada pie with spicy chorizo filling",
             style: "Gallega"
         }                
@@ -313,7 +314,7 @@ export const menuData = {
             servings: "1 person",
             category: "breakfast",
             subCategory: "combos",
-            image: "../images/products/classic-breakfast.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "2 Eggs, Ham or Bacon, French Fries, Toast, Café con Leche"
         },
         {
@@ -323,7 +324,7 @@ export const menuData = {
             servings: "1 person",
             category: "breakfast",
             subCategory: "combos",
-            image: "../images/products/basic-breakfast.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "2 Eggs, Ham or Bacon, French Fries"
         },
         {
@@ -333,7 +334,7 @@ export const menuData = {
             servings: "1 person",
             category: "breakfast",
             subCategory: "combos",
-            image: "../images/products/mini-breakfast.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "2 Eggs, Ham or Bacon"
         },
         {
@@ -343,7 +344,7 @@ export const menuData = {
             servings: "3-4 people",
             category: "breakfast",
             subCategory: "family",
-            image: "../images/products/family-breakfast.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "12 eggs, 12 bacon, 3 sausage patties, 3 ham slices, 3 tostadas, 3 croquetas (no substitutions)"
         },
         {
@@ -353,7 +354,7 @@ export const menuData = {
             servings: "1 sandwich",
             category: "breakfast",
             subCategory: "sandwiches",
-            image: "../images/products/pan-con-tortilla.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Fried egg sandwich with ham, swiss cheese, and onion"
         },
         {
@@ -363,7 +364,7 @@ export const menuData = {
             servings: "1 sandwich",
             category: "breakfast",
             subCategory: "sandwiches",
-            image: "../images/products/pan-de-bono-special.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Colombian cheese bread with fried egg, ham, and cheese"
         },
         {
@@ -373,7 +374,7 @@ export const menuData = {
             servings: "1 sandwich",
             category: "breakfast",
             subCategory: "sandwiches",
-            image: "../images/products/sunshine-croissant.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Two breakfast sausages, fried egg, american cheese"
         },
         {
@@ -383,7 +384,7 @@ export const menuData = {
             servings: "1 wrap",
             category: "breakfast",
             subCategory: "sandwiches",
-            image: "../images/products/sunshine-wrap.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Breakfast sausage, hard fried egg, american cheese"
         },
         {
@@ -393,7 +394,7 @@ export const menuData = {
             servings: "1 slice",
             category: "breakfast",
             subCategory: "spanish",
-            image: "../images/products/tortilla-slice.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Spanish omelette with onion, pepper, and potatoes"
         },
         {
@@ -403,7 +404,7 @@ export const menuData = {
             servings: "Whole pie",
             category: "breakfast",
             subCategory: "spanish",
-            image: "../images/products/tortilla-whole.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Complete Spanish omelette with onion, pepper, and potatoes"
         },
         {
@@ -413,7 +414,7 @@ export const menuData = {
             servings: "Add-on",
             category: "breakfast",
             subCategory: "add-ons",
-            image: "../images/products/combo-sol.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Pastelito and Small Café"
         },
         {
@@ -423,7 +424,7 @@ export const menuData = {
             servings: "Add-on",
             category: "breakfast",
             subCategory: "add-ons",
-            image: "../images/products/combo-sabor.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Choice of French Fries or Chips with Drink"
         },
         {
@@ -433,7 +434,7 @@ export const menuData = {
             servings: "Add-on",
             category: "breakfast",
             subCategory: "add-ons",
-            image: "../images/products/egg-whites.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Substitute regular eggs with egg whites"
         }
     ],
@@ -444,7 +445,7 @@ export const menuData = {
             price: 8.99,
             category: "sandwiches",
             subCategory: "traditional",
-            image: "../images/products/cubano.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Ham, deli pork, Swiss, pickle, mayo, mustard",
             canBeHeated: true
         },
@@ -454,7 +455,7 @@ export const menuData = {
             price: 7.99,
             category: "sandwiches",
             subCategory: "traditional",
-            image: "../images/products/media-noche.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Ham, deli pork, Swiss, pickle, mayo, mustard",
             canBeHeated: true
         },
@@ -464,7 +465,7 @@ export const menuData = {
             price: 9.49,
             category: "sandwiches",
             subCategory: "traditional",
-            image: "../images/products/croqueta-preparada.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Ham, Swiss, croqueta, pickle, mayo, mustard",
             canBeHeated: true
         },
@@ -474,7 +475,7 @@ export const menuData = {
             price: 7.49,
             category: "sandwiches",
             subCategory: "traditional",
-            image: "../images/products/croissant-sandwich.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Ham, Swiss",
             canBeHeated: true
         },
@@ -484,7 +485,7 @@ export const menuData = {
             price: 9.99,
             category: "sandwiches",
             subCategory: "traditional",
-            image: "../images/products/pan-con-bistec.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Steak, onion, lettuce, tomato, potato sticks",
             canBeHeated: true
         },
@@ -494,7 +495,7 @@ export const menuData = {
             price: 10.49,
             category: "sandwiches",
             subCategory: "traditional",
-            image: "../images/products/al-caballo.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Steak and Eggs",
             canBeHeated: true
         },
@@ -504,7 +505,7 @@ export const menuData = {
             price: 10.49,
             category: "sandwiches",
             subCategory: "traditional",
-            image: "../images/products/a-la-juliana.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Ham and Cheese",
             canBeHeated: true
         },
@@ -514,7 +515,7 @@ export const menuData = {
             price: 7.99,
             category: "sandwiches",
             subCategory: "traditional",
-            image: "../images/products/pan-con-lechon.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Mojo pulled pork, grilled onion",
             canBeHeated: true
         },
@@ -524,7 +525,7 @@ export const menuData = {
             price: 9.99,
             category: "sandwiches",
             subCategory: "traditional",
-            image: "../images/products/sandwich-pollo.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Chicken, onion, lettuce, tomato, potato sticks",
             canBeHeated: true
         },
@@ -534,7 +535,7 @@ export const menuData = {
             price: 8.99,
             category: "sandwiches",
             subCategory: "traditional",
-            image: "../images/products/sandwich-pavo.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Turkey, Swiss, lettuce, tomato",
             canBeHeated: true
         },
@@ -544,7 +545,7 @@ export const menuData = {
             price: 8.99,
             category: "sandwiches",
             subCategory: "traditional",
-            image: "../images/products/sandwich-tuna.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Tuna salad, lettuce, tomato",
             canBeHeated: true
         },
@@ -554,7 +555,7 @@ export const menuData = {
             price: 8.99,
             category: "sandwiches",
             subCategory: "traditional",
-            image: "../images/products/club.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Ham, bacon, Swiss, lettuce, tomato",
             canBeHeated: true
         },
@@ -564,7 +565,7 @@ export const menuData = {
             price: 8.49,
             category: "sandwiches",
             subCategory: "traditional",
-            image: "../images/products/elena-ruz.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Turkey, cream cheese, strawberry jelly",
             canBeHeated: true
         },
@@ -574,7 +575,7 @@ export const menuData = {
             price: 6.99,
             category: "sandwiches",
             subCategory: "traditional",
-            image: "../images/products/frita-cubana.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Chorizo burger, onion, ketchup, potato sticks",
             canBeHeated: true
         },
@@ -584,7 +585,7 @@ export const menuData = {
             price: 4.99,
             category: "sandwiches",
             subCategory: "traditional",
-            image: "../images/products/choripan.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Chorizo, grilled onion",
             canBeHeated: true
         },
@@ -594,7 +595,7 @@ export const menuData = {
             price: 4.99,
             category: "sandwiches",
             subCategory: "traditional",
-            image: "../images/products/gran-bocadito.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Homemade ham spread",
             canBeHeated: true
         },
@@ -604,7 +605,7 @@ export const menuData = {
             price: 10.99,
             category: "sandwiches",
             subCategory: "traditional",
-            image: "../images/products/montecristo.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Turkey, ham, bacon, Swiss, French toast, powdered sugar",
             canBeHeated: true
         },
@@ -614,7 +615,7 @@ export const menuData = {
             price: 8.99,
             category: "sandwiches",
             subCategory: "traditional",
-            image: "../images/products/italiano.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Ham, salami, cantimpalo, Swiss",
             canBeHeated: true
         },
@@ -624,7 +625,7 @@ export const menuData = {
             price: 8.99,
             category: "sandwiches",
             subCategory: "traditional",
-            image: "../images/products/multigrain-turkey.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Turkey, cheese, lettuce & tomato",
             canBeHeated: true
         },
@@ -634,7 +635,7 @@ export const menuData = {
             price: 6.49,
             category: "sandwiches",
             subCategory: "traditional",
-            image: "../images/products/mini-cubano.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Ham, deli pork, Swiss, pickle, mayo, mustard",
             canBeHeated: true
         },
@@ -644,7 +645,7 @@ export const menuData = {
             price: 4.49,
             category: "sandwiches",
             subCategory: "traditional",
-            image: "../images/products/mini-sandwich.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Ham, Swiss, pickle, mayo, mustard",
             canBeHeated: true
         },
@@ -654,7 +655,7 @@ export const menuData = {
             price: 12.99,
             category: "sandwiches",
             subCategory: "specialty",
-            image: "../images/products/churrasco-special.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Churrasco steak, onion, tomato, chimichurri",
             canBeHeated: true,
             recommended: "hot"
@@ -665,7 +666,7 @@ export const menuData = {
             price: 10.99,
             category: "sandwiches",
             subCategory: "specialty",
-            image: "../images/products/grilled-chicken-special.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Chicken, mozzarella, onion, lettuce, tomato, potato sticks",
             canBeHeated: true,
             recommended: "hot"
@@ -676,10 +677,8 @@ export const menuData = {
             price: 10.99,
             category: "sandwiches",
             subCategory: "specialty",
-            image: "../images/products/super-cubano.jpg",
-            description: "Ham, deli pork, Swiss, tomato, pickle, mayo, mustard",
-            canBeHeated: true,
-            recommended: "hot"
+            image: "/assets/images/food-placeholder.png",
+            description: "Classic Cuban sandwich"
         },
         {
             id: "sand025",
@@ -687,7 +686,7 @@ export const menuData = {
             price: 10.99,
             category: "sandwiches",
             subCategory: "specialty",
-            image: "../images/products/super-lechon.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Mojo pulled pork, Swiss, onion, tomato, potato sticks",
             canBeHeated: true,
             recommended: "hot"
@@ -698,7 +697,7 @@ export const menuData = {
             price: 10.49,
             category: "sandwiches",
             subCategory: "specialty",
-            image: "../images/products/blt-turkey-melt.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Turkey, bacon, provolone, onion, lettuce, tomato",
             canBeHeated: true,
             recommended: "hot"
@@ -709,7 +708,7 @@ export const menuData = {
             price: 10.49,
             category: "sandwiches",
             subCategory: "specialty",
-            image: "../images/products/tuna-melt.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Homemade tuna salad, mozzarella, onion, lettuce, tomato",
             canBeHeated: true,
             recommended: "hot"
@@ -720,7 +719,7 @@ export const menuData = {
             price: 10.99,
             category: "sandwiches",
             subCategory: "specialty",
-            image: "../images/products/philly-cheesesteak.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Steak, provolone, onion, green pepper, red pepper",
             canBeHeated: true,
             recommended: "hot"
@@ -731,7 +730,7 @@ export const menuData = {
             price: 10.99,
             category: "sandwiches",
             subCategory: "specialty",
-            image: "../images/products/philly-chicken.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Chicken, provolone, onion, green pepper, red pepper",
             canBeHeated: true,
             recommended: "hot"
@@ -742,7 +741,7 @@ export const menuData = {
             price: 10.49,
             category: "sandwiches",
             subCategory: "specialty",
-            image: "../images/products/chicken-caesar.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Chicken, mozzarella, lettuce, tomato, Caesar dressing",
             canBeHeated: true,
             recommended: "hot"
@@ -753,7 +752,7 @@ export const menuData = {
             price: 10.99,
             category: "sandwiches",
             subCategory: "specialty",
-            image: "../images/products/qualita-italiano.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Ham, prosciutto, salami, cantimpalo, mozzarella, lettuce, tomato, pesto",
             canBeHeated: true,
             recommended: "hot"
@@ -764,7 +763,7 @@ export const menuData = {
             price: 8.99,
             category: "sandwiches",
             subCategory: "specialty",
-            image: "../images/products/havanero-wrap.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Chicken, plantains, mozzarella, onion, red pepper, lettuce",
             canBeHeated: true,
             recommended: "hot"
@@ -778,7 +777,7 @@ export const menuData = {
                 description:"Includes cups, sugar packets, and stirrers",
                 servings: "96 oz. | 12 cups",
                 price: 21.99,
-                image: "../images/products/american-coffee-carafe.jpg",
+                image: "/assets/images/food-placeholder.png",
                 category: "drinks",
                 subCategory: "toGoCarafe"
             },
@@ -788,7 +787,7 @@ export const menuData = {
                 description:"Includes cups, sugar packets, and stirrers",
                 servings: "96 oz. | 12 cups",
                 price: 24.99,
-                image: "../images/products/cafe-leche-carafe.jpg",
+                image: "/assets/images/food-placeholder.png",
                 category: "drinks",
                 subCategory: "toGoCarafe"
             }
@@ -799,7 +798,7 @@ export const menuData = {
                 name: "Americano",
                 description: "Arabica blend black coffee",
                 servings: "Serves 1",
-                image: "../images/products/americano.jpg",
+                image: "/assets/images/food-placeholder.png",
                 category: "drinks",
                 subCategory: "hotDrinks",
                 sizes: [
@@ -826,7 +825,7 @@ export const menuData = {
                 name: "Café con Leche",
                 description: "Classic cuban coffee espresso with half portion of milk",
                 servings: "Serves 1",
-                image: "../images/products/cafe-con-leche.jpg",
+                image: "/assets/images/food-placeholder.png",
                 category: "drinks",
                 subCategory: "hotDrinks",
                 sizes: [
@@ -853,7 +852,7 @@ export const menuData = {
                 name: "Cortadito",
                 description: "Classic mini cuban coffee cut with milk",
                 servings: "Serves 1",
-                image: "../images/products/cortadito.jpg",
+                image: "/assets/images/food-placeholder.png",
                 category: "drinks",
                 subCategory: "hotDrinks",
                 sizes: [
@@ -879,7 +878,7 @@ desserts: [
         price: 3.25,
         category: "desserts",
         subCategory: "marquesitas",
-        image: "../images/products/carrot-marquesita.jpg",
+        image: "/assets/images/food-placeholder.png",
         description: "Classic carrot cake marquesita"
     },
     {
@@ -888,7 +887,7 @@ desserts: [
         price: 3.25,
         category: "desserts",
         subCategory: "marquesitas",
-        image: "../images/products/red-velvet-marquesita.jpg",
+        image: "/assets/images/food-placeholder.png",
         description: "Rich red velvet marquesita"
     },
     {
@@ -897,7 +896,7 @@ desserts: [
         price: 3.25,
         category: "desserts",
         subCategory: "marquesitas",
-        image: "../images/products/tiramisu-marquesita.jpg",
+        image: "/assets/images/food-placeholder.png",
         description: "Coffee-flavored tiramisu marquesita"
     },
     {
@@ -906,7 +905,7 @@ desserts: [
         price: 3.25,
         category: "desserts",
         subCategory: "marquesitas",
-        image: "../images/products/coconut-marquesita.jpg",
+        image: "/assets/images/food-placeholder.png",
         description: "Tropical coconut marquesita"
     },
     {
@@ -915,7 +914,7 @@ desserts: [
         price: 3.25,
         category: "desserts",
         subCategory: "marquesitas",
-        image: "../images/products/chocolate-cake-marquesita.jpg",
+        image: "/assets/images/food-placeholder.png",
         description: "Classic chocolate cake marquesita"
     },
     {
@@ -924,7 +923,7 @@ desserts: [
         price: 3.25,
         category: "desserts",
         subCategory: "marquesitas",
-        image: "../images/products/chocolate-mousse-marquesita.jpg",
+        image: "/assets/images/food-placeholder.png",
         description: "Light chocolate mousse marquesita"
     },
     {
@@ -933,7 +932,7 @@ desserts: [
         price: 3.25,
         category: "desserts",
         subCategory: "marquesitas",
-        image: "../images/products/opera-marquesita.jpg",
+        image: "/assets/images/food-placeholder.png",
         description: "Coffee and chocolate opera marquesita"
     },
     {
@@ -942,7 +941,7 @@ desserts: [
         price: 3.25,
         category: "desserts",
         subCategory: "marquesitas",
-        image: "../images/products/capuchino-marquesita.jpg",
+        image: "/assets/images/food-placeholder.png",
         description: "Cuban cappuccino flavored marquesita"
     },
     {
@@ -951,7 +950,7 @@ desserts: [
         price: 3.25,
         category: "desserts",
         subCategory: "marquesitas",
-        image: "../images/products/dulce-leche-marquesita.jpg",
+        image: "/assets/images/food-placeholder.png",
         description: "Caramel dulce de leche marquesita"
     },
     {
@@ -960,7 +959,7 @@ desserts: [
         price: 3.25,
         category: "desserts",
         subCategory: "marquesitas",
-        image: "../images/products/strawberry-marquesita.jpg",
+        image: "/assets/images/food-placeholder.png",
         description: "Fresh strawberry marquesita"
     },
     {
@@ -969,7 +968,7 @@ desserts: [
         price: 3.25,
         category: "desserts",
         subCategory: "marquesitas",
-        image: "../images/products/oreo-marquesita.jpg",
+        image: "/assets/images/food-placeholder.png",
         description: "Cookies and cream marquesita"
     },
     {
@@ -978,7 +977,7 @@ desserts: [
         price: 3.99,
         category: "desserts",
         subCategory: "cakeSlices",
-        image: "../images/products/merengue-vanilla.jpg",
+        image: "/assets/images/food-placeholder.png",
         description: "Classic vanilla cake with meringue"
     },
     {
@@ -987,7 +986,7 @@ desserts: [
         price: 3.99,
         category: "desserts",
         subCategory: "cakeSlices",
-        image: "../images/products/merengue-chocolate.jpg",
+        image: "/assets/images/food-placeholder.png",
         description: "Rich chocolate cake with meringue"
     },
     {
@@ -996,7 +995,7 @@ desserts: [
         price: 3.99,
         category: "desserts",
         subCategory: "cakeSlices",
-        image: "../images/products/rum-vanilla.jpg",
+        image: "/assets/images/food-placeholder.png",
         description: "Vanilla rum-soaked cake"
     },
     {
@@ -1005,7 +1004,7 @@ desserts: [
         price: 3.99,
         category: "desserts",
         subCategory: "cakeSlices",
-        image: "../images/products/rum-chocolate.jpg",
+        image: "/assets/images/food-placeholder.png",
         description: "Chocolate rum-soaked cake"
     },
     {
@@ -1014,7 +1013,7 @@ desserts: [
         price: 3.99,
         category: "desserts",
         subCategory: "cheesecakeSlices",
-        image: "../images/products/flan-cheesecake.jpg",
+        image: "/assets/images/food-placeholder.png",
         description: "Creamy flan-topped cheesecake"
     },
     {
@@ -1023,7 +1022,7 @@ desserts: [
         price: 3.99,
         category: "desserts",
         subCategory: "cheesecakeSlices",
-        image: "../images/products/strawberry-cheesecake.jpg",
+        image: "/assets/images/food-placeholder.png",
         description: "Classic strawberry cheesecake"
     },
     {
@@ -1032,7 +1031,7 @@ desserts: [
         price: 3.99,
         category: "desserts",
         subCategory: "cheesecakeSlices",
-        image: "../images/products/oreo-cheesecake.jpg",
+        image: "/assets/images/food-placeholder.png",
         description: "Cookies and cream cheesecake"
     },
     {
@@ -1041,7 +1040,7 @@ desserts: [
         price: 3.25,
         category: "desserts",
         subCategory: "senoritas",
-        image: "../images/products/chocolate-senorita.jpg",
+        image: "/assets/images/food-placeholder.png",
         description: "Flaky pastry layers with vanilla custard and chocolate"
     },
     {
@@ -1050,7 +1049,7 @@ desserts: [
         price: 3.25,
         category: "desserts",
         subCategory: "senoritas",
-        image: "../images/products/white-chocolate-senorita.jpg",
+        image: "/assets/images/food-placeholder.png",
         description: "Flaky pastry layers with vanilla custard and white chocolate"
     },
     {
@@ -1059,7 +1058,7 @@ desserts: [
         price: 3.25,
         category: "desserts",
         subCategory: "senoritas",
-        image: "../images/products/dulce-leche-senorita.jpg",
+        image: "/assets/images/food-placeholder.png",
         description: "Flaky pastry layers with vanilla custard and dulce de leche"
     },
     {
@@ -1068,7 +1067,7 @@ desserts: [
         price: 3.25,
         category: "desserts",
         subCategory: "senoritas",
-        image: "../images/products/powdered-sugar-senorita.jpg",
+        image: "/assets/images/food-placeholder.png",
         description: "Flaky pastry layers with vanilla custard and powdered sugar"
     },
 {
@@ -1077,7 +1076,7 @@ desserts: [
     price: 2.99,
     category: "desserts",
     subCategory: "eclairs",
-    image: "../images/products/chocolate-eclair.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Choux pastry with vanilla custard and chocolate"
 },
 {
@@ -1086,7 +1085,7 @@ desserts: [
     price: 2.99,
     category: "desserts",
     subCategory: "eclairs",
-    image: "../images/products/white-chocolate-eclair.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Choux pastry with vanilla custard and white chocolate"
 },
 {
@@ -1095,7 +1094,7 @@ desserts: [
     price: 2.99,
     category: "desserts",
     subCategory: "eclairs",
-    image: "../images/products/dulce-leche-eclair.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Choux pastry with vanilla custard and dulce de leche"
 },
 {
@@ -1104,7 +1103,7 @@ desserts: [
     price: 3.49,
     category: "desserts",
     subCategory: "dulceCopas",
-    image: "../images/products/flan.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Classic Cuban custard"
 },
 {
@@ -1113,7 +1112,7 @@ desserts: [
     price: 3.49,
     category: "desserts",
     subCategory: "dulceCopas",
-    image: "../images/products/flan-queso.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Cheese flan custard"
 },
 {
@@ -1122,7 +1121,7 @@ desserts: [
     price: 3.79,
     category: "desserts",
     subCategory: "dulceCopas",
-    image: "../images/products/flan-pumpkin.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Seasonal pumpkin flan",
     seasonal: true
 },
@@ -1132,7 +1131,7 @@ desserts: [
     price: 3.49,
     category: "desserts",
     subCategory: "dulceCopas",
-    image: "../images/products/arroz-leche.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Traditional rice pudding"
 },
 {
@@ -1141,7 +1140,7 @@ desserts: [
     price: 3.49,
     category: "desserts",
     subCategory: "dulceCopas",
-    image: "../images/products/tres-leches.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Three milk soaked cake"
 },
 {
@@ -1150,7 +1149,7 @@ desserts: [
     price: 3.99,
     category: "desserts",
     subCategory: "dulceCopas",
-    image: "../images/products/cuatro-leches.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Four milk soaked cake"
 },
 {
@@ -1159,7 +1158,7 @@ desserts: [
     price: 3.49,
     category: "desserts",
     subCategory: "dulceCopas",
-    image: "../images/products/dulce-leche.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Caramel milk dessert"
 },
 {
@@ -1168,7 +1167,7 @@ desserts: [
     price: 3.49,
     category: "desserts",
     subCategory: "dulceCopas",
-    image: "../images/products/crema-catalana.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Spanish style crème brûlée"
 },
 {
@@ -1177,7 +1176,7 @@ desserts: [
     price: 1.99,
     category: "desserts",
     subCategory: "mojados",
-    image: "../images/products/bunuelo.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Traditional Cuban fritter in sugar syrup"
 },
 {
@@ -1186,7 +1185,7 @@ desserts: [
     price: 3.29,
     category: "desserts",
     subCategory: "mojados",
-    image: "../images/products/torreja.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Cuban style French toast in sugar syrup"
 },
 {
@@ -1195,7 +1194,7 @@ desserts: [
     price: 3.25,
     category: "desserts",
     subCategory: "mojados",
-    image: "../images/products/cabezote.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Traditional Cuban dessert in sugar syrup"
 },
 {
@@ -1204,7 +1203,7 @@ desserts: [
     price: 2.49,
     category: "desserts",
     subCategory: "mojados",
-    image: "../images/products/panetela-borracha.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Rum soaked sponge cake"
 },
 {
@@ -1213,7 +1212,7 @@ desserts: [
     price: 1.99,
     category: "desserts",
     subCategory: "mojados",
-    image: "../images/products/capuchino-cubano.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Cuban style cappuccino dessert"
 },
 {
@@ -1222,7 +1221,7 @@ desserts: [
     price: 2.49,
     category: "desserts",
     subCategory: "mojados",
-    image: "../images/products/rollitos.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Cuban style jelly roll"
 },
 {
@@ -1231,7 +1230,7 @@ desserts: [
     price: 3.79,
     category: "desserts",
     subCategory: "mojados",
-    image: "../images/products/tocinillo.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Traditional egg yolk dessert"
 },
 {
@@ -1240,7 +1239,7 @@ desserts: [
     price: 2.79,
     category: "desserts",
     subCategory: "pudin",
-    image: "../images/products/pudin-pan.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Traditional bread pudding"
 },
 {
@@ -1249,7 +1248,7 @@ desserts: [
     price: 2.79,
     category: "desserts",
     subCategory: "pudin",
-    image: "../images/products/pudin-diplomatico.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Fruit diplomat pudding"
 },
 {
@@ -1258,7 +1257,7 @@ desserts: [
     price: 2.99,
     category: "desserts",
     subCategory: "cakePops",
-    image: "../images/products/vanilla-cake-pop.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Vanilla cake pop with sprinkles"
 },
 {
@@ -1267,7 +1266,7 @@ desserts: [
     price: 2.99,
     category: "desserts",
     subCategory: "cakePops",
-    image: "../images/products/chocolate-cake-pop.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Chocolate cake pop with sprinkles"
 },
 {
@@ -1276,7 +1275,7 @@ desserts: [
     price: 2.99,
     category: "desserts",
     subCategory: "cakePops",
-    image: "../images/products/red-velvet-cake-pop.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Red velvet cake pop with sprinkles"
 },
 {
@@ -1285,7 +1284,7 @@ desserts: [
     price: 2.25,
     category: "desserts",
     subCategory: "cupcakes",
-    image: "../images/products/vanilla-cupcake.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Classic vanilla cupcake with frosting"
 },
 {
@@ -1294,7 +1293,7 @@ desserts: [
     price: 2.25,
     category: "desserts",
     subCategory: "cupcakes",
-    image: "../images/products/chocolate-cupcake.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Classic chocolate cupcake with frosting"
 },
 {
@@ -1303,7 +1302,7 @@ desserts: [
     price: 4.69,
     category: "desserts",
     subCategory: "miniMousses",
-    image: "../images/products/chocolate-mousse.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Rich chocolate mousse"
 },
 {
@@ -1312,7 +1311,7 @@ desserts: [
     price: 4.69,
     category: "desserts",
     subCategory: "miniMousses",
-    image: "../images/products/mango-chocolate-mousse.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Mango and chocolate mousse"
 },
 {
@@ -1321,7 +1320,7 @@ desserts: [
     price: 4.69,
     category: "desserts",
     subCategory: "miniMousses",
-    image: "../images/products/mango-guava-mousse.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Tropical mango and guava mousse"
 },
 {
@@ -1330,7 +1329,7 @@ desserts: [
     price: 4.69,
     category: "desserts",
     subCategory: "miniMousses",
-    image: "../images/products/passion-fruit-mousse.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Passion fruit mousse"
 },
 {
@@ -1339,7 +1338,7 @@ desserts: [
     price: 4.69,
     category: "desserts",
     subCategory: "miniMousses",
-    image: "../images/products/peach-merengue-mousse.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Peach meringue mousse"
 },
 {
@@ -1348,7 +1347,7 @@ desserts: [
     price: 4.69,
     category: "desserts",
     subCategory: "miniMousses",
-    image: "../images/products/blackberry-mousse.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Fresh blackberry mousse"
 },
 {
@@ -1357,7 +1356,7 @@ desserts: [
     price: 4.69,
     category: "desserts",
     subCategory: "miniMousses",
-    image: "../images/products/dulce-leche-almond-mousse.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Caramel and almond mousse"
 },
 {
@@ -1366,7 +1365,7 @@ desserts: [
     price: 3.99,
     category: "desserts",
     subCategory: "tartaletas",
-    image: "../images/products/fruit-tart.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Fresh fruit tart with custard"
 },
 {
@@ -1375,7 +1374,7 @@ desserts: [
     price: 3.79,
     category: "desserts",
     subCategory: "tartaletas",
-    image: "../images/products/key-lime-tart.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Classic key lime tart"
 },
 {
@@ -1384,7 +1383,7 @@ desserts: [
     price: 10.99,
     category: "desserts",
     subCategory: "familyDesserts",
-    image: "../images/products/flan-familiar.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Family size classic flan",
     servings: "6-8 people"
 },
@@ -1394,7 +1393,7 @@ desserts: [
     price: 9.99,
     category: "desserts",
     subCategory: "familyDesserts",
-    image: "../images/products/arroz-leche-familiar.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Family size rice pudding",
     servings: "6-8 people"
 },
@@ -1404,7 +1403,7 @@ desserts: [
     price: 12.99,
     category: "desserts",
     subCategory: "familyDesserts",
-    image: "../images/products/tres-leches-familiar.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Family size three milk cake",
     servings: "8-10 people"
 },
@@ -1414,7 +1413,7 @@ desserts: [
     price: 13.99,
     category: "desserts",
     subCategory: "familyDesserts",
-    image: "../images/products/cuatro-leches-familiar.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Family size four milk cake",
     servings: "8-10 people"
 },
@@ -1424,7 +1423,7 @@ desserts: [
     price: 9.99,
     category: "desserts",
     subCategory: "familyDesserts",
-    image: "../images/products/pudin-pan-familiar.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Family size bread pudding",
     servings: "6-8 people"
 },
@@ -1434,7 +1433,7 @@ desserts: [
     price: 8.99,
     category: "desserts",
     subCategory: "familyDesserts",
-    image: "../images/products/bunuelos-familiar.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Family portion of Cuban fritters",
     servings: "6-8 people"
 },
@@ -1444,7 +1443,7 @@ desserts: [
     price: 12.99,
     category: "desserts",
     subCategory: "familyDesserts",
-    image: "../images/products/napolitano-familiar.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Family size Neapolitan cake",
     servings: "8-10 people"
 },
@@ -1454,7 +1453,7 @@ desserts: [
     price: 24.00,
     category: "desserts",
     subCategory: "familyDesserts",
-    image: "../images/products/doboh.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Traditional Hungarian layered cake",
     servings: "10-12 people"
 },
@@ -1464,7 +1463,7 @@ desserts: [
     price: 22.00,
     category: "desserts",
     subCategory: "familyDesserts",
-    image: "../images/products/tatianof.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Classic Russian layered cake",
     servings: "10-12 people"
 },
@@ -1474,7 +1473,7 @@ desserts: [
     price: 9.99,
     category: "desserts",
     subCategory: "wholePies",
-    image: "../images/products/apple-pie.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Classic apple pie",
     servings: "8 slices"
 },
@@ -1484,7 +1483,7 @@ desserts: [
     price: 9.99,
     category: "desserts",
     subCategory: "wholePies",
-    image: "../images/products/guava-pie.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Tropical guava pie",
     servings: "8 slices"
 },
@@ -1494,7 +1493,7 @@ desserts: [
     price: 9.99,
     category: "desserts",
     subCategory: "wholePies",
-    image: "../images/products/coconut-pie.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Sweet coconut cream pie",
     servings: "8 slices"
 },
@@ -1504,7 +1503,7 @@ desserts: [
     price: 9.99,
     category: "desserts",
     subCategory: "wholePies",
-    image: "../images/products/mango-pie.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Fresh mango pie",
     servings: "8 slices"
 },
@@ -1514,7 +1513,7 @@ desserts: [
     price: 9.99,
     category: "desserts",
     subCategory: "wholePies",
-    image: "../images/products/pina-pie.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Tropical pineapple pie",
     servings: "8 slices"
 },
@@ -1524,7 +1523,7 @@ desserts: [
     price: 13.99,
     category: "desserts",
     subCategory: "wholePies",
-    image: "../images/products/pecan-pie.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Rich pecan pie",
     servings: "8 slices"
 },
@@ -1534,7 +1533,7 @@ desserts: [
     price: 11.99,
     category: "desserts",
     subCategory: "wholePies",
-    image: "../images/products/pumpkin-pie.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Traditional pumpkin pie",
     servings: "8 slices"
 },
@@ -1544,7 +1543,7 @@ desserts: [
     price: 11.99,
     category: "desserts",
     subCategory: "wholePies",
-    image: "../images/products/keylime-pie.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Florida style key lime pie",
     servings: "8 slices"
 },
@@ -1554,7 +1553,7 @@ desserts: [
     price: 2.99,
     category: "desserts",
     subCategory: "pieSlices",
-    image: "../images/products/apple-pie-slice.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Classic apple pie slice"
 },
 {
@@ -1563,7 +1562,7 @@ desserts: [
     price: 2.99,
     category: "desserts",
     subCategory: "pieSlices",
-    image: "../images/products/guava-pie-slice.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Tropical guava pie slice"
 },
 {
@@ -1572,7 +1571,7 @@ desserts: [
     price: 2.99,
     category: "desserts",
     subCategory: "pieSlices",
-    image: "../images/products/coconut-pie-slice.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Sweet coconut cream pie slice"
 },
 {
@@ -1581,7 +1580,7 @@ desserts: [
     price: 2.99,
     category: "desserts",
     subCategory: "pieSlices",
-    image: "../images/products/mango-pie-slice.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Fresh mango pie slice"
 },
 {
@@ -1590,7 +1589,7 @@ desserts: [
     price: 2.99,
     category: "desserts",
     subCategory: "pieSlices",
-    image: "../images/products/pina-pie-slice.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Tropical pineapple pie slice"
 },
 {
@@ -1599,7 +1598,7 @@ desserts: [
     price: 2.99,
     category: "desserts",
     subCategory: "pieSlices",
-    image: "../images/products/pecan-pie-slice.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Rich pecan pie slice"
 },
 {
@@ -1608,7 +1607,7 @@ desserts: [
     price: 2.99,
     category: "desserts",
     subCategory: "pieSlices",
-    image: "../images/products/pumpkin-pie-slice.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Traditional pumpkin pie slice"
 },
 {
@@ -1617,7 +1616,7 @@ desserts: [
     price: 2.99,
     category: "desserts",
     subCategory: "pieSlices",
-    image: "../images/products/keylime-pie-slice.jpg",
+    image: "/assets/images/food-placeholder.png",
     description: "Florida style key lime pie slice"
 }
 ],
@@ -1628,7 +1627,7 @@ catering: {
             name: "Turkey Meal",
             category: "catering",
             subCategory: "meals",
-            image: "../images/catering/turkey-meal.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Traditional turkey meal with all the fixings",
             options: [
                 {
@@ -1650,7 +1649,7 @@ catering: {
             name: "Sweet Ham Meal",
             category: "catering",
             subCategory: "meals",
-            image: "../images/catering/ham-meal.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Glazed ham meal with traditional sides",
             options: [
                 {
@@ -1672,7 +1671,7 @@ catering: {
             name: "Cuban Pork Meal",
             category: "catering",
             subCategory: "meals",
-            image: "../images/catering/pork-meal.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Traditional Cuban style pork with sides",
             options: [
                 {
@@ -1694,7 +1693,7 @@ catering: {
             name: "Arroz Imperial Meal",
             category: "catering",
             subCategory: "meals",
-            image: "../images/catering/arroz-imperial.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Includes salad and yuca or platanitos",
             options: [
                 {
@@ -1718,7 +1717,7 @@ catering: {
             name: "Ensalada",
             category: "catering",
             subCategory: "sides",
-            image: "../images/catering/ensalada.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Fresh Cuban style salad",
             options: [
                 {
@@ -1734,7 +1733,7 @@ catering: {
             name: "Congri",
             category: "catering",
             subCategory: "sides",
-            image: "../images/catering/congri.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Traditional Cuban rice and black beans",
             options: [
                 {
@@ -1756,7 +1755,7 @@ catering: {
             name: "Arroz Blanco",
             category: "catering",
             subCategory: "sides",
-            image: "../images/catering/arroz-blanco.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "White rice",
             options: [
                 {
@@ -1778,7 +1777,7 @@ catering: {
             name: "Yuca",
             category: "catering",
             subCategory: "sides",
-            image: "../images/catering/yuca.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Cassava root",
             options: [
                 {
@@ -1800,7 +1799,7 @@ catering: {
             name: "Plantanito",
             category: "catering",
             subCategory: "sides",
-            image: "../images/catering/plantanito.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Sweet plantains",
             options: [
                 {
@@ -1824,7 +1823,7 @@ catering: {
             id: "pkg001",
             name: "Fiesta Starter",
             price: 35.99,
-            image: "../images/catering/fiesta-starter.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Perfect for intimate gatherings",
             serves: "15-20 guests",
             includes: [
@@ -1837,7 +1836,7 @@ catering: {
             id: "pkg002",
             name: "Cuban Social",
             price: 49.99,
-            image: "../images/catering/cuban-social.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Ideal for small office parties",
             serves: "25-30 guests",
             includes: [
@@ -1851,7 +1850,7 @@ catering: {
             id: "pkg003",
             name: "Havana Nights",
             price: 59.99,
-            image: "../images/catering/havana-nights.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Perfect mix for evening gatherings",
             serves: "25-30 guests",
             includes: [
@@ -1866,7 +1865,7 @@ catering: {
             id: "pkg004",
             name: "Family Celebration",
             price: 129.99,
-            image: "../images/catering/family-celebration.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Ideal for family reunions",
             serves: "50-60 guests",
             includes: [
@@ -1881,7 +1880,7 @@ catering: {
             id: "pkg005",
             name: "Grand Fiesta",
             price: 199.99,
-            image: "../images/catering/grand-fiesta.jpg",
+            image: "/assets/images/food-placeholder.png",
             description: "Perfect for large celebrations",
             serves: "75-100 guests",
             includes: [
@@ -1899,7 +1898,7 @@ catering: {
                 id: "cake001",
                 name: "Merengue Classico",
                 category: "traditional",
-                image: "../images/cakes/merengue-classico.jpg",
+                image: "/assets/images/food-placeholder.png",
                 description: "Classic meringue cake with light, airy texture",
                 options: [
                     { size: "15 Pieces", price: 21.00 },
@@ -1913,7 +1912,7 @@ catering: {
                 id: "cake002",
                 name: "Buttercream Classic",
                 category: "traditional",
-                image: "../images/cakes/buttercream-classic.jpg",
+                image: "/assets/images/food-placeholder.png",
                 description: "Classic buttercream cake with custard filling",
                 options: [
                     { size: "15 Pieces", price: 29.99 },
@@ -1929,7 +1928,7 @@ catering: {
                 id: "cake003",
                 name: "Naked Buttercream",
                 category: "specialty",
-                image: "../images/cakes/naked-buttercream.jpg",
+                image: "/assets/images/food-placeholder.png",
                 description: "Rustic style with exposed layers",
                 options: [
                     { size: "10 Pieces", price: 35.00 },
@@ -1942,7 +1941,7 @@ catering: {
                 id: "cake004",
                 name: "Red Velvet",
                 category: "signature",
-                image: "../images/cakes/red-velvet.jpg",
+                image: "/assets/images/food-placeholder.png",
                 description: "Classic red velvet with cream cheese frosting",
                 price: 28.99
             },
@@ -1950,7 +1949,7 @@ catering: {
                 id: "cake005",
                 name: "Tiramisu",
                 category: "signature",
-                image: "../images/cakes/tiramisu.jpg",
+                image: "/assets/images/food-placeholder.png",
                 description: "Italian coffee-flavored classic",
                 price: 35.00
             }
@@ -1960,7 +1959,7 @@ catering: {
                 id: "cake006",
                 name: "Dulce de Leche Cheesecake",
                 category: "cheesecakes",
-                image: "../images/cakes/dulce-cheesecake.jpg",
+                image: "/assets/images/food-placeholder.png",
                 description: "Creamy cheesecake with dulce de leche",
                 price: 22.00
             }

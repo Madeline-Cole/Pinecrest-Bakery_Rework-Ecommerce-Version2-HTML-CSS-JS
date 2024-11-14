@@ -245,5 +245,5 @@ function handleAddToCart() {
     localStorage.setItem('cartItems', JSON.stringify(updatedCart));
     document.getElementById('reorderModal').style.display = 'none';
     alert('Items added to cart!');
-    window.location.href = '../cart.html';
+    window.location.href = '/pages/cart.html';
 }

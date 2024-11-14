@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/popular-products.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/nav.css">
 </head>
 <body>
     <div id="nav-placeholder"></div>
@@ -19,9 +20,9 @@
                 <h1>Experience the Heart of Cuban Baking</h1>
                 <p class="hero-description">Discover the rich flavors and time-honored recipes that make our bakery a local favorite. From savory empanadas to sweet pastelitos, every bite is a taste of tradition.</p>
                 <div class="hero-buttons">
-                    <a href="/delivery" class="btn">Order Delivery</a>
-                    <a href="/menu" class="btn">Order Pickup</a>
-                    <a href="/menu" class="btn">View Menu</a>
+                    <a href="https://order.online/business/pinecrest-bakery-96360/" class="btn">Order Delivery</a>
+                    <a href="/pages/menu/bakery.html" class="btn">View Menus</a>
+                    <a href="/pages/auth.html" class="btn">Sign In</a>
                 </div>
             </div>
         </section>
@@ -162,32 +163,145 @@
     <h2 class="section-title">Follow Us on Instagram</h2>
     <div class="instagram-grid">
         <div class="insta-post">
-            <img src="insta1.jpg" alt="Fresh Pastries">
+            <img src="assets/images/insta1.png" alt="Instagram Post 1">
             <div class="overlay">
                 <i class="fab fa-instagram"></i>
                 <span>256 likes</span>
             </div>
         </div>
-        <!-- More Instagram posts -->
+        <div class="insta-post">
+            <img src="assets/images/insta2.png" alt="Instagram Post 2">
+            <div class="overlay">
+                <i class="fab fa-instagram"></i>
+                <span>342 likes</span>
+            </div>
+        </div>
+        <div class="insta-post">
+            <img src="assets/images/insta3.png" alt="Instagram Post 3">
+            <div class="overlay">
+                <i class="fab fa-instagram"></i>
+                <span>189 likes</span>
+            </div>
+        </div>
+        <div class="insta-post">
+            <img src="assets/images/insta04.png" alt="Instagram Post 4">
+            <div class="overlay">
+                <i class="fab fa-instagram"></i>
+                <span>423 likes</span>
+            </div>
+        </div>
+        <div class="insta-post">
+            <img src="assets/images/insta05.png" alt="Instagram Post 5">
+            <div class="overlay">
+                <i class="fab fa-instagram"></i>
+                <span>298 likes</span>
+            </div>
+        </div>
+        <div class="insta-post">
+            <img src="assets/images/insta06.png" alt="Instagram Post 6">
+            <div class="overlay">
+                <i class="fab fa-instagram"></i>
+                <span>512 likes</span>
+            </div>
+        </div>
+        <div class="insta-post">
+            <img src="assets/images/insta07.png" alt="Instagram Post 7">
+            <div class="overlay">
+                <i class="fab fa-instagram"></i>
+                <span>102 likes</span>
+            </div>
+        </div>
+        <div class="insta-post">
+            <img src="assets/images/insta08.png" alt="Instagram Post 8">
+            <div class="overlay">
+                <i class="fab fa-instagram"></i>
+                <span>253 likes</span>
+            </div>
+        </div>
     </div>
-    <a href="#" class="follow-btn">@pinecrestbakery</a>
+    <a href="https://www.instagram.com/pinecrestbakery" class="follow-btn" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-instagram"></i> Follow @pinecrestbakery
+    </a>
 </section>
-
 <!-- Location Finder Section -->
 <section class="location-finder">
     <h2 class="section-title">Find a Location Near You</h2>
+    
     <div class="location-search">
-        <input type="text" placeholder="Enter your zip code or address">
-        <button class="search-btn">Find Stores</button>
-    </div>
-    <div class="location-content">
-        <div id="map"></div>
-        <div class="locations-list">
-            <!-- Location cards will be dynamically populated -->
+        <div class="search-wrapper">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" placeholder="Enter your zip code or address" id="location-input">
+            <button class="search-btn">
+                <i class="fas fa-arrow-right"></i>
+                Find Stores
+            </button>
         </div>
     </div>
-</section>
 
+    <div class="location-content">
+        <div class="locations-list">
+            <div class="location-card">
+                <h3>Pinecrest - Main Store</h3>
+                <address>
+                    <i class="fas fa-map-marker-alt"></i>
+                    12101 S Dixie Hwy, Miami, FL 33156
+                </address>
+                <div class="store-details">
+                    <p><i class="fas fa-clock"></i> Open 24/7</p>
+                    <p><i class="fas fa-phone"></i> (305) 555-0123</p>
+                </div>
+                <div class="store-actions">
+                    <a href="#" class="btn-directions">Get Directions</a>
+                    <a href="#" class="btn-order">Order Online</a>
+                </div>
+            </div>
+
+            <div class="location-card">
+                <h3>Coral Gables</h3>
+                <address>
+                    <i class="fas fa-map-marker-alt"></i>
+                    2345 Miracle Mile, Coral Gables, FL 33134
+                </address>
+                <div class="store-details">
+                    <p><i class="fas fa-clock"></i> 6AM - 10PM Daily</p>
+                    <p><i class="fas fa-phone"></i> (305) 555-0124</p>
+                </div>
+                <div class="store-actions">
+                    <a href="#" class="btn-directions">Get Directions</a>
+                    <a href="#" class="btn-order">Order Online</a>
+                </div>
+            </div>
+
+            <div class="location-card">
+                <h3>South Beach</h3>
+                <address>
+                    <i class="fas fa-map-marker-alt"></i>
+                    789 Collins Ave, Miami Beach, FL 33139
+                </address>
+                <div class="store-details">
+                    <p><i class="fas fa-clock"></i> 7AM - 11PM Daily</p>
+                    <p><i class="fas fa-phone"></i> (305) 555-0125</p>
+                </div>
+                <div class="store-actions">
+                    <a href="#" class="btn-directions">Get Directions</a>
+                    <a href="#" class="btn-order">Order Online</a>
+                </div>
+            </div>
+        </div>
+        
+    <div id="map" class="store-map">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3595.624721974584!2d-80.31859492362396!3d25.662700177777088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9c7f942144105%3A0x6f9f2f6f7d9fa315!2s12101%20S%20Dixie%20Hwy%2C%20Miami%2C%20FL%2033156!5e0!3m2!1sen!2sus!4v1699486234086!5m2!1sen!2sus" 
+            width="100%" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+    </div>
+</section>
 <div id="footer-placeholder"></div>
 
     </main>
@@ -198,3 +312,5 @@
     <script type="module" src="assets/js/testimonials.js"></script>
 </body>
 </html>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
