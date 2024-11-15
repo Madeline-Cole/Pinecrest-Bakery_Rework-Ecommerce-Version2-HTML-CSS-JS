@@ -282,7 +282,7 @@ function filterProducts() {
  function renderProductWithOptions(product, storedCart) {
     const price = product.price || 3; // Default to 3 if price is undefined
     return `
-        <div class="menu-product-card">
+        <div class="menu-product-card" data-product-id="${product.id}">
             <img src="${product.image}" alt="${product.name}" class="menu-product-image">
             <div class="menu-product-info">
                 <h3 class="menu-product-title">${product.name}</h3>
@@ -305,7 +305,7 @@ function renderProductWithoutOptions(product, storedCart) {
     const currentQuantity = getQuantityForSimpleProduct(product, storedCart);
     const price = product.price || 3; // Default to 3 if price is undefined
     return `
-        <div class="menu-product-card">
+        <div class="menu-product-card" data-product-id="${product.id}">
             <img src="${product.image}" alt="${product.name}" class="menu-product-image">
             <div class="menu-product-info">
                 <h3 class="menu-product-title">${product.name}</h3>
@@ -353,6 +353,21 @@ function getQuantityForSimpleProduct(product, storedCart) {
 document.addEventListener('DOMContentLoaded', () => {
     initializeFilters();
     const currentCategory = document.body.dataset.category || 'latinAmerican';
+    
+    // Add this smooth scroll code
+    const productId = window.location.hash.replace('#product-', '');
+    if (productId) {
+        setTimeout(() => {
+            const productElement = document.querySelector(`[data-product-id="${productId}"]`);
+            if (productElement) {
+                productElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                productElement.classList.add('highlight');
+                setTimeout(() => {
+                    productElement.classList.remove('highlight');
+                }, 2000);
+            }
+        }, 100);
+    }
 
     // Initialize
     if (menuData[currentCategory]) {

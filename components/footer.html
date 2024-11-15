@@ -1,8 +1,24 @@
+<script>
+    const basePath = window.location.hostname.includes('github.io') 
+        ? '/Pinecrest_Bakery_Site_Rework_Version_2-HTML-CSS-JS'
+        : '';
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        // Update all footer links
+        const links = document.querySelectorAll('footer a[href^="/"]');
+        links.forEach(link => {
+            link.href = `${basePath}${link.getAttribute('href')}`;
+        });
+
+        // Update footer logo
+        const logo = document.querySelector('.footer-logo');
+        logo.src = `${basePath}/assets/images/PinecrestBakery-logo.png`;
+    });
+</script>
+
 <footer class="main-footer">
     <div class="footer-content">
-        <!-- Main Footer Grid -->
         <div class="footer-grid">
-            <!-- Company Info -->
             <div class="footer-section">
                 <img src="/assets/images/PinecrestBakery-logo.png" alt="Pinecrest Bakery Logo" class="footer-logo">
                 <p>Bringing authentic Cuban flavors to your table since 1950. Family-owned and operated with pride.</p>
@@ -14,7 +30,6 @@
                 </div>
             </div>
 
-            <!-- Quick Links -->
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
@@ -25,7 +40,6 @@
                 </ul>
             </div>
 
-            <!-- Menus -->
             <div class="footer-section">
                 <h3>Our Menus</h3>
                 <ul>
@@ -36,7 +50,6 @@
                 </ul>
             </div>
 
-            <!-- Contact Info -->
             <div class="footer-section">
                 <h3>Contact Us</h3>
                 <ul class="contact-info">
@@ -47,7 +60,6 @@
             </div>
         </div>
 
-        <!-- Newsletter Bar -->
         <div class="footer-newsletter">
             <h3>Stay Updated</h3>
             <form class="footer-subscribe">
@@ -56,7 +68,6 @@
             </form>
         </div>
 
-        <!-- Bottom Bar -->
         <div class="footer-bottom">
             <p>&copy; 2024 Pinecrest Bakery. All rights reserved.</p>
             <div class="footer-links">

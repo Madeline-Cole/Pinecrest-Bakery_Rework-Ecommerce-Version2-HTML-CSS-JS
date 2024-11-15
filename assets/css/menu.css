@@ -361,3 +361,21 @@
     flex-grow: 1;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+.highlight {
+    animation: highlightAnimation 2s ease-out;
+}
+
+@keyframes highlightAnimation {
+    0% {
+        background-color: #fff7e6;
+        transform: scale(1.02);
+    }
+    100% {
+        background-color: white;
+        transform: scale(1);
+    }
+}

@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const quantity = getOptionQuantityInCart(product.id, '');
             
             return `
-                <div class="cafe-card" data-product-id="${product.id}">
+                <div id="product-${product.id}" class="cafe-card" data-product-id="${product.id}">
                     <img src="${product.image}" alt="${product.name}" class="cafe-image">
                     <div class="cafe-content">
                         <h2 class="cafe-title">${product.name}</h2>

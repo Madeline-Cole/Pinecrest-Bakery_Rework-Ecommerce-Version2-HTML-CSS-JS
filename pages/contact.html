@@ -6,36 +6,90 @@
     <title>Contact Us - Pinecrest Bakery</title>
     <link rel="stylesheet" href="/assets/css/styles.css">
     <link rel="stylesheet" href="/assets/css/nav.css">
+    <link rel="stylesheet" href="/assets/css/contact.css">
 </head>
 <body>
     <!-- Navigation -->
     <div id="nav-placeholder"></div>
 
     <main class="contact-page">
+        <div class="contact-header">
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+        </div>
+    
         <section class="contact-grid">
             <div class="contact-form-container">
-                <h1>Get in Touch</h1>
-                <form class="contact-form">
-                    <input type="text" placeholder="Name" required>
-                    <input type="email" placeholder="Email" required>
-                    <select name="subject">
-                        <option value="general">General Inquiry</option>
-                        <option value="catering">Catering</option>
-                        <option value="feedback">Feedback</option>
-                    </select>
-                    <textarea placeholder="Your Message" required></textarea>
-                    <button type="submit">Send Message</button>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" required>
+                        <span class="focus-border"></span>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" required>
+                        <span class="focus-border"></span>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone">
+                        <span class="focus-border"></span>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="catering">Catering Services</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="wholesale">Wholesale Orders</option>
+                        </select>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" required></textarea>
+                        <span class="focus-border"></span>
+                    </div>
+    
+                    <button type="submit" class="submit-btn">
+                        <span class="btn-text">Send Message</span>
+                        <span class="btn-icon">→</span>
+                    </button>
                 </form>
             </div>
+    
             <div class="contact-info">
-                <!-- Contact information -->
+                <div class="info-card">
+                    <div class="info-icon">📍</div>
+                    <h3>Visit Us</h3>
+                    <p>12101 S Dixie Hwy,<br>Miami, FL 33156</p>
+                </div>
+    
+                <div class="info-card">
+                    <div class="info-icon">📞</div>
+                    <h3>Call Us</h3>
+                    <p>(305) 555-0123</p>
+                    <p>Available 24/7</p>
+                </div>
+    
+                <div class="info-card">
+                    <div class="info-icon">✉️</div>
+                    <h3>Email Us</h3>
+                    <p>info@pinecrestbakery.com</p>
+                </div>
             </div>
         </section>
-    </main>
+    </main>    
 
     <!-- Footer -->
     <div id="footer-placeholder"></div>
 </body>
 
 <script type="module" src="/assets/js/components.js"></script>
+<script type="module" src="/assets/js/contact.js"></script>
 </html>

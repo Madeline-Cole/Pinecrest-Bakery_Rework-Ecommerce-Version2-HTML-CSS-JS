@@ -1,5 +1,33 @@
 <link rel="stylesheet" href="assets/css/nav.css">
 
+<script>
+    // Set base path based on environment
+    const basePath = window.location.hostname.includes('github.io') 
+        ? '/Pinecrest_Bakery_Site_Rework_Version_2-HTML-CSS-JS'
+        : '';
+    
+    // Update all nav links with the correct base path
+    document.addEventListener('DOMContentLoaded', function() {
+        const links = document.querySelectorAll('nav a[href^="/"]');
+        links.forEach(link => {
+            link.href = `${basePath}${link.getAttribute('href')}`;
+        });
+
+        // Update logo src
+        const logo = document.querySelector('.logo img');
+        logo.src = `${basePath}/assets/images/PinecrestBakery-logo.png`;
+
+        // Update stylesheet path
+        const existingLink = document.querySelector('link[href*="nav.css"]');
+        if (!existingLink) {
+            const cssLink = document.createElement('link');
+            cssLink.rel = 'stylesheet';
+            cssLink.href = `${basePath}/assets/css/nav.css`;
+            document.head.appendChild(cssLink);
+        }
+    });
+</script>
+
 <nav class="navbar"> 
     <div class="hamburger">
         <span></span>
@@ -53,4 +81,6 @@
             <li><a href="/pages/cart.html">Cart</a></li>
         </ul>
     </div>
+</nav>
+
     

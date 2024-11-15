@@ -3,6 +3,22 @@ import { menuData } from '/data/menuData.js';
 document.addEventListener('DOMContentLoaded', () => {
     let currentProducts = getAllCateringProducts();
 
+    // Get the product ID from the URL hash
+    const productId = window.location.hash.replace('#product-', '');
+    
+    if (productId) {
+        setTimeout(() => {
+            const productElement = document.querySelector(`[data-product-id="${productId}"]`);
+            if (productElement) {
+                productElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                productElement.classList.add('highlight');
+                setTimeout(() => {
+                    productElement.classList.remove('highlight');
+                }, 2000);
+            }
+        }, 100);
+    }
+
     function handleQuantityChange(e) {
         const productId = e.target.dataset.id;
         const input = e.target.parentElement.querySelector('.quantity-input');
@@ -83,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Special handling for party packages
         if (product.includes) {
             return `
-    <div class="catering-product-card package-card">
+   <div class="catering-product-card package-card" data-product-id="${product.id}">
         <div class="catering-product-info">
             <div class="package-header">
                 <h3 class="catering-product-title">${product.name}</h3>
@@ -105,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Regular product card for other items
         return `
-    <div class="catering-product-card">
+    <div class="catering-product-card" data-product-id="${product.id}">
         <img src="${product.image}" alt="${product.name}" class="catering-product-image">
         <div class="catering-product-info">
             <h3 class="catering-product-title">${product.name}</h3>

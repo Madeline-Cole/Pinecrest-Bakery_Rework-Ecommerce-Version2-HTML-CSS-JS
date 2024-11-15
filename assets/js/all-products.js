@@ -2,6 +2,61 @@ import { menuData } from '/data/menuData.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const productsGrid = document.querySelector('#productsGrid'); // Match your HTML id
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const searchInput = document.querySelector('#searchProducts');
+    
+    let currentFilter = 'all';
+    let currentProducts = getAllProducts();
+
+    // Filter button click handlers
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Update active button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            
+            // Apply filter
+            currentFilter = button.dataset.category;
+            filterAndRenderProducts();
+        });
+    });
+
+    // Search functionality
+    searchInput.addEventListener('input', (e) => {
+        filterAndRenderProducts();
+    });
+
+    function filterAndRenderProducts() {
+        let filteredProducts = currentProducts;
+        
+        // Add fade-out effect
+        productsGrid.classList.add('fade-out');
+        
+        setTimeout(() => {
+            // Apply filters
+            if (currentFilter !== 'all') {
+                filteredProducts = filteredProducts.filter(product => 
+                    product.sourceCategory === currentFilter
+                );
+            }
+            
+            const searchTerm = searchInput.value.toLowerCase();
+            if (searchTerm) {
+                filteredProducts = filteredProducts.filter(product => 
+                    product.name.toLowerCase().includes(searchTerm) || 
+                    (product.description && product.description.toLowerCase().includes(searchTerm))
+                );
+            }
+            
+            // Update grid and fade back in
+            productsGrid.innerHTML = filteredProducts.map(renderProductCard).join('');
+            productsGrid.classList.remove('fade-out');
+        }, 300);
+    }
+
+    // Initial render
+    filterAndRenderProducts();
+
 
     function getAllProducts() {
         const products = [];
@@ -80,44 +135,64 @@ document.addEventListener('DOMContentLoaded', () => {
         return `${categoryPages[product.sourceCategory]}#product-${product.id}`;
     }
 
+    
     function renderProductCard(product) {
         return `
             <a href="${createProductLink(product)}" class="product-card">
                 <div class="product-image-container">
-                    <img src="${product.image || '/assets/images/placeholder.jpg'}" alt="${product.name}" class="product-image">
-                    <div class="hover-overlay">
-                        <span class="order-now">View Details</span>
-                    </div>
+                    <img src="${product.image || '/assets/images/placeholder.jpg'}" 
+                         alt="${product.name}" 
+                         class="product-image">
                 </div>
-                <div class="product-info">
-                    <h3 class="product-name">${product.name}</h3>
-                    <p class="product-category">${product.sourceCategory}</p>
-                    <p class="product-description">${product.description || ''}</p>
-                    <p class="product-price">${product.price ? `$${product.price.toFixed(2)}` : 'Price Varies'}</p>
-                    ${renderProductOptions(product)}
+                
+                <div class="product-content">
+                    <h3 class="product-title">${product.name}</h3>
+                    
+                    ${product.description ? 
+                        `<p class="product-description">${product.description}</p>` : 
+                        '<p class="product-description">Delicious item from our menu</p>'
+                    }
+                    
+                    <div class="product-details">
+                        ${renderPrice(product)}
+                        ${renderOptions(product)}
+                        ${renderCategory(product)}
+                    </div>
                 </div>
             </a>
         `;
     }
     
-    function renderProductOptions(product) {
-        if (!product.options) return '';
+    function renderPrice(product) {
+        if (!product.price) return '<span class="price">Price upon request</span>';
         
-        if (Array.isArray(product.options)) {
+        if (typeof product.price === 'object') {
             return `
-                <div class="product-options">
-                    <p>Options: ${product.options.join(', ')}</p>
+                <div class="price-range">
+                    ${Object.entries(product.price)
+                        .map(([size, price]) => `<span>${size}: $${price}</span>`)
+                        .join(' | ')}
                 </div>
             `;
         }
         
-        return `
-            <div class="product-options">
-                ${Object.entries(product.options).map(([key, value]) => `
-                    <p><strong>${key}:</strong> ${Array.isArray(value) ? value.join(', ') : value}</p>
-                `).join('')}
-            </div>
-        `;
+        return `<span class="price">$${product.price}</span>`;
+    }
+    
+    function renderOptions(product) {
+        if (!product.options) return '';
+        
+        const options = Array.isArray(product.options) 
+            ? product.options.join(', ')
+            : Object.entries(product.options)
+                .map(([key, value]) => `${key}: ${value}`)
+                .join(', ');
+                
+        return `<div class="options">${options}</div>`;
+    }
+    
+    function renderCategory(product) {
+        return `<span class="category-tag">${product.sourceCategory}</span>`;
     }    
 
     function renderAllProducts() {
