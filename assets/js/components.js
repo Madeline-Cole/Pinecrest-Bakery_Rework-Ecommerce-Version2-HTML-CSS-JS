@@ -1,7 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Determine if we're on GitHub Pages or local
+    const isGitHubPages = window.location.hostname.includes('github.io');
+    
+    // Set the base path accordingly
+    const basePath = isGitHubPages 
+        ? '/Pinecrest_Bakery_Site_Rework_Version_2-HTML-CSS-JS'
+        : '';
+
     // Load navigation
     const navPlaceholder = document.getElementById('nav-placeholder');
-    fetch('../../components/nav.html')
+    fetch(`${basePath}/components/nav.html`)
         .then(response => response.text())
         .then(data => {
             navPlaceholder.innerHTML = data;
@@ -19,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
     // Load footer
-    fetch('../../components/footer.html')
+    fetch(`${basePath}/components/footer.html`)
         .then(response => response.text())
         .then(data => {
             document.getElementById('footer-placeholder').innerHTML = data;
