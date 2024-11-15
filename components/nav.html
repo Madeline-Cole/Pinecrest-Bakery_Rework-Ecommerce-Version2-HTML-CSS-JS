@@ -1,49 +1,44 @@
 <link rel="stylesheet" href="assets/css/nav.css">
 
 <script>
-    // Set base path based on environment
-    const basePath = window.location.hostname.includes('github.io') 
-        ? '/Pinecrest_Bakery_Site_Rework_Version_2-HTML-CSS-JS'
-        : '';
+   document.addEventListener('DOMContentLoaded', function() {
+    const isGitHubPages = window.location.hostname.includes('github.io');
+    const basePath = isGitHubPages ? '/Pinecrest_Bakery_Site_Rework_Version_2-HTML-CSS-JS' : '';
     
-    // Update all nav links with the correct base path
-    document.addEventListener('DOMContentLoaded', function() {
-       // Update all navigation links
-    const allLinks = document.querySelectorAll('nav a');
-    allLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        if (href && href.startsWith('/') && !href.startsWith('//') && !href.startsWith('/#')) {
-            link.href = `${basePath}${href}`;
-        }
-    });
+    // Function to update links
+    function updateLinks(selector) {
+        document.querySelectorAll(selector).forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && href.startsWith('/') && !href.includes('#')) {
+                const cleanHref = href.replace(basePath, '');
+                link.href = `${basePath}${cleanHref}`;
+            }
+        });
+    }
 
-    // Update logo source
+    // Update stylesheet path
+    const existingLink = document.querySelector('link[href*="nav.css"]');
+    if (!existingLink) {
+        const cssLink = document.createElement('link');
+        cssLink.rel = 'stylesheet';
+        cssLink.href = `${basePath}/assets/css/nav.css`;
+        document.head.appendChild(cssLink);
+    }
+
+    // Update all navigation links
+    updateLinks('nav a');
+    updateLinks('.mobile-menu-content a');
+    
+    // Update logo
     const logo = document.querySelector('.logo img');
     if (logo) {
         const currentSrc = logo.getAttribute('src');
         if (currentSrc.startsWith('/')) {
-            logo.src = `${basePath}${currentSrc}`;
+            const cleanSrc = currentSrc.replace(basePath, '');
+            logo.src = `${basePath}${cleanSrc}`;
         }
     }
-
-    // Update mobile menu links
-    const mobileLinks = document.querySelectorAll('.mobile-menu-content a');
-    mobileLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        if (href && href.startsWith('/') && !href.startsWith('//') && !href.startsWith('/#')) {
-            link.href = `${basePath}${href}`;
-        }
-    });
-
-        // Update stylesheet path
-        const existingLink = document.querySelector('link[href*="nav.css"]');
-        if (!existingLink) {
-            const cssLink = document.createElement('link');
-            cssLink.rel = 'stylesheet';
-            cssLink.href = `${basePath}/assets/css/nav.css`;
-            document.head.appendChild(cssLink);
-        }
-    });
+}); 
 </script>
 
 <nav class="navbar"> 
