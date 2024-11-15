@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Load navigation
     const navPlaceholder = document.getElementById('nav-placeholder');
-    fetch('/components/nav.html')
+    fetch('../../components/nav.html')
         .then(response => response.text())
         .then(data => {
             navPlaceholder.innerHTML = data;
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
     // Load footer
-    fetch('/components/footer.html')
+    fetch('../../components/footer.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('footer-placeholder').innerHTML = data;

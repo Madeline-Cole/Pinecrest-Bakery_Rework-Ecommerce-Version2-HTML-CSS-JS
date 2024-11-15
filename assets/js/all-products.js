@@ -1,74 +1,130 @@
 import { menuData } from '/data/menuData.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    const productsGrid = document.getElementById('productsGrid');
-    const searchInput = document.getElementById('searchProducts');
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    
-    let allProducts = [];
-    
+    const productsGrid = document.querySelector('#productsGrid'); // Match your HTML id
+
+    function getAllProducts() {
+        const products = [];
+        
+        // Cafe products
+        ['breakfast', 'sandwiches'].forEach(category => {
+            if (menuData[category]) {
+                products.push(...menuData[category].map(product => ({
+                    ...product,
+                    sourceCategory: 'cafe'
+                })));
+            }
+        });
+        
+        // Drinks need special handling due to subcategories
+        if (menuData.drinks) {
+            Object.values(menuData.drinks).forEach(subcategory => {
+                products.push(...subcategory.map(product => ({
+                    ...product,
+                    sourceCategory: 'cafe'
+                })));
+            });
+        }
+        
+        // Bakery products
+        ['latinAmerican', 'desserts', 'breads', 'dryCase'].forEach(category => {
+            if (menuData[category]) {
+                products.push(...menuData[category].map(product => ({
+                    ...product,
+                    sourceCategory: 'bakery'
+                })));
+            }
+        });
+        
+        // Seasonal products
+        if (menuData.seasonal?.thanksgiving) {
+            products.push(...menuData.seasonal.thanksgiving.map(product => ({
+                ...product,
+                sourceCategory: 'seasonal'
+            })));
+        }
+        
+        // Catering products
+        if (menuData.catering) {
+            ['partyPackages', 'meals', 'sides'].forEach(category => {
+                if (menuData.catering[category]) {
+                    products.push(...menuData.catering[category].map(product => ({
+                        ...product,
+                        sourceCategory: 'catering'
+                    })));
+                }
+            });
+            
+            // Handle catering cakes separately due to structure
+            if (menuData.catering.cakes) {
+                Object.values(menuData.catering.cakes).forEach(cakeType => {
+                    products.push(...cakeType.map(product => ({
+                        ...product,
+                        sourceCategory: 'catering'
+                    })));
+                });
+            }
+        }
+        
+        return products;
+    }
+
     function createProductLink(product) {
         const categoryPages = {
-            bakery: '/pages/menu/bakery.html',
             cafe: '/pages/menu/cafe.html',
+            bakery: '/pages/menu/bakery.html',
             seasonal: '/pages/menu/seasonal.html',
             catering: '/pages/menu/catering.html'
         };
         
-        return `${categoryPages[product.category]}#${product.id}`;
+        return `${categoryPages[product.sourceCategory]}#product-${product.id}`;
     }
-    
-    function renderProducts(products) {
-        productsGrid.innerHTML = products.map(product => `
-            <a href="${createProductLink(product)}" class="product-card" data-category="${product.category}">
+
+    function renderProductCard(product) {
+        return `
+            <a href="${createProductLink(product)}" class="product-card">
                 <div class="product-image-container">
-                    <img src="${product.image}" alt="${product.name}" class="product-image">
+                    <img src="${product.image || '/assets/images/placeholder.jpg'}" alt="${product.name}" class="product-image">
                     <div class="hover-overlay">
-                        <span class="order-now">Order Now</span>
+                        <span class="order-now">View Details</span>
                     </div>
                 </div>
                 <div class="product-info">
                     <h3 class="product-name">${product.name}</h3>
-                    <p class="product-category">${product.category}</p>
-                    <p class="product-price">$${product.price.toFixed(2)}</p>
-                    <div class="product-options">
-                        ${product.options ? Object.entries(product.options).map(([key, values]) => `
-                            <p class="option-group">
-                                <span class="option-label">${key}:</span> 
-                                ${Array.isArray(values) ? values.join(', ') : values}
-                            </p>
-                        `).join('') : ''}
-                    </div>
+                    <p class="product-category">${product.sourceCategory}</p>
+                    <p class="product-description">${product.description || ''}</p>
+                    <p class="product-price">${product.price ? `$${product.price.toFixed(2)}` : 'Price Varies'}</p>
+                    ${renderProductOptions(product)}
                 </div>
             </a>
-        `).join('');
+        `;
     }
     
-    // Rest of your existing fetch and filter logic
-    // Filter functionality
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const category = button.dataset.category;
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            
-            const filteredProducts = category === 'all' 
-                ? allProducts 
-                : allProducts.filter(product => product.category === category);
-            
-            renderProducts(filteredProducts);
-        });
-    });
-    
-    // Search functionality
-    searchInput.addEventListener('input', (e) => {
-        const searchTerm = e.target.value.toLowerCase();
-        const filteredProducts = allProducts.filter(product => 
-            product.name.toLowerCase().includes(searchTerm) ||
-            product.category.toLowerCase().includes(searchTerm)
-        );
-        renderProducts(filteredProducts);
-    });
+    function renderProductOptions(product) {
+        if (!product.options) return '';
+        
+        if (Array.isArray(product.options)) {
+            return `
+                <div class="product-options">
+                    <p>Options: ${product.options.join(', ')}</p>
+                </div>
+            `;
+        }
+        
+        return `
+            <div class="product-options">
+                ${Object.entries(product.options).map(([key, value]) => `
+                    <p><strong>${key}:</strong> ${Array.isArray(value) ? value.join(', ') : value}</p>
+                `).join('')}
+            </div>
+        `;
+    }    
 
-    fetchAllProducts();
+    function renderAllProducts() {
+        const products = getAllProducts();
+        productsGrid.innerHTML = products.map(renderProductCard).join('');
+    }
+
+    // Initialize
+    renderAllProducts();
 });
