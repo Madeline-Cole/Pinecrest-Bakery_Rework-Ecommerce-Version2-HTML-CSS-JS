@@ -8,14 +8,32 @@
     
     // Update all nav links with the correct base path
     document.addEventListener('DOMContentLoaded', function() {
-        const links = document.querySelectorAll('nav a[href^="/"]');
-        links.forEach(link => {
-            link.href = `${basePath}${link.getAttribute('href')}`;
-        });
+       // Update all navigation links
+    const allLinks = document.querySelectorAll('nav a');
+    allLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('/') && !href.startsWith('//') && !href.startsWith('/#')) {
+            link.href = `${basePath}${href}`;
+        }
+    });
 
-        // Update logo src
-        const logo = document.querySelector('.logo img');
-        logo.src = `${basePath}/assets/images/PinecrestBakery-logo.png`;
+    // Update logo source
+    const logo = document.querySelector('.logo img');
+    if (logo) {
+        const currentSrc = logo.getAttribute('src');
+        if (currentSrc.startsWith('/')) {
+            logo.src = `${basePath}${currentSrc}`;
+        }
+    }
+
+    // Update mobile menu links
+    const mobileLinks = document.querySelectorAll('.mobile-menu-content a');
+    mobileLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('/') && !href.startsWith('//') && !href.startsWith('/#')) {
+            link.href = `${basePath}${href}`;
+        }
+    });
 
         // Update stylesheet path
         const existingLink = document.querySelector('link[href*="nav.css"]');
